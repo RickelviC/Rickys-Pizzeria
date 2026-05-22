@@ -1,6 +1,7 @@
 package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
+import com.pluralsight.Plaza.Pizzeria.toppings.Regular;
 
 import java.util.Scanner;
 
@@ -8,6 +9,8 @@ public class UserInterface {
 
     private Scanner scanner;
     private Order order;
+
+   // private List<IPriceable> order = new ArrayList<>();
 
     public UserInterface() {
         scanner = new Scanner(System.in);
@@ -100,6 +103,9 @@ public class UserInterface {
 
     public void makePizza() {
 
+        Regular top = new Regular("onions");
+
+
     }
 
     public Drink makeDrink() {
@@ -117,7 +123,9 @@ public class UserInterface {
         System.out.println("enter the flavor of your drink: ");
         String flavor = scanner.nextLine();
 
-        return new Drink(size,flavor);
+        Drink drink = new Drink(size,flavor);
+
+        return drink;
     }
 
     public void makeGarlicKnot() {

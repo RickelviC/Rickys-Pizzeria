@@ -1,7 +1,7 @@
 package com.pluralsight.Plaza.Pizzeria.toppings;
 
-public class SideTopping extends Topping{
-    public SideTopping(String option) {
+public class Side extends Topping{
+    public Side(String option) {
         super(option);
     }
 

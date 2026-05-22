@@ -1,7 +1,7 @@
 package com.pluralsight.Plaza.Pizzeria.toppings;
 
-public class PremiumMeatTopping extends PremiumTopping{
-    public PremiumMeatTopping(String option, boolean isExtra) {
+public class Meat extends PremiumTopping{
+    public Meat(String option, boolean isExtra) {
         super(option, isExtra);
     }
 

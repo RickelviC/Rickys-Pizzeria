@@ -1,6 +1,5 @@
 package com.pluralsight.Plaza.Pizzeria.main;
 
-import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
 import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 
 import java.util.ArrayList;
@@ -8,11 +7,11 @@ import java.util.List;
 
 public class Order {
     private int Id;
-    private List<IPriceable> item;
+    private List<IPriceable> items;
 
     public Order(int id) {
         Id = id;
-        this.item = new ArrayList<>();
+        this.items = new ArrayList<>();
     }
 
     public int getId() {
@@ -23,18 +22,22 @@ public class Order {
         Id = id;
     }
 
-    public List<IPriceable> getItem() {
-        return item;
+    public List<IPriceable> getItems() {
+        return items;
     }
 
-    public void setItem(List<IPriceable> item) {
-        this.item = item;
+    public void setItems(List<IPriceable> items) {
+        this.items = items;
+    }
+
+    public void addItem(IPriceable item){
+        items.add(item);
     }
 
     public double getTotalPrice(){
         double totalPrice = 0;
 
-        for (IPriceable price : item) {
+        for (IPriceable price : items) {
             totalPrice += price.getPrice();
         }
         return totalPrice;

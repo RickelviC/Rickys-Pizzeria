@@ -1,8 +1,8 @@
 package com.pluralsight.Plaza.Pizzeria.toppings;
 
-public class SouceTopping extends Topping{
+public class Regular extends Topping {
 
-    public SouceTopping(String option) {
+    public Regular(String option) {
         super(option);
     }
 
