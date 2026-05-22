@@ -1,5 +1,6 @@
 package com.pluralsight.Plaza.Pizzeria.main;
 
+import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
 import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 
 import java.util.ArrayList;
@@ -28,5 +29,18 @@ public class Order {
 
     public void setItem(List<IPriceable> item) {
         this.item = item;
+    }
+
+    public double getTotalPrice(){
+        double totalPrice = 0;
+        double totalPizzaPrice = 0;
+        double totalDrinkPrice = 0;
+        double totalKnotPrice = 0;
+
+
+
+
+        totalPrice = totalPizzaPrice + totalDrinkPrice + totalKnotPrice;
+        return totalPrice;
     }
 }

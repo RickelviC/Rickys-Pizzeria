@@ -12,6 +12,12 @@ public class Pizza implements IPriceable{
 
     @Override
     public double getPrice() {
-        return 0;
+        if (size == 8) {
+            return 8.50;
+        } else if (size == 12) {
+            return 12.0;
+        } else if (size == 16) {
+            return 16.50;
+        } else return 0;
     }
 }
