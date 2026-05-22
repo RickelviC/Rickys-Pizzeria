@@ -4,21 +4,22 @@ import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Order {
-    private int Id;
+    private UUID Id;
     private List<IPriceable> items;
 
-    public Order(int id) {
+    public Order(UUID id) {
         Id = id;
         this.items = new ArrayList<>();
     }
 
-    public int getId() {
+    public UUID getId() {
         return Id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         Id = id;
     }
 

@@ -4,16 +4,19 @@ import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.toppings.Regular;
 
 import java.util.Scanner;
+import java.util.UUID;
 
 public class UserInterface {
 
     private Scanner scanner;
     private Order order;
 
-   // private List<IPriceable> order = new ArrayList<>();
-
     public UserInterface() {
+        //UUID is a 36-character string made up of 5 groups of hexadecimal digits separated by hyphens
+        //example 123e4567-e89b-12d3-a456-426614174000
+        UUID Id = UUID.randomUUID();
         scanner = new Scanner(System.in);
+        order = new Order(Id);
     }
 
     public void display() {
@@ -44,10 +47,8 @@ public class UserInterface {
                 case "4":
                     checkOut();
                     break;
-                case "5":
+                case "0":
                     cancelOrder();
-                    break;
-                case "6":
                     quit = true;
                     break;
                 default:
@@ -103,9 +104,6 @@ public class UserInterface {
 
     public void makePizza() {
 
-        Regular top = new Regular("onions");
-
-
     }
 
     public Drink makeDrink() {
@@ -123,7 +121,10 @@ public class UserInterface {
         System.out.println("enter the flavor of your drink: ");
         String flavor = scanner.nextLine();
 
-        Drink drink = new Drink(size,flavor);
+        Drink drink = new Drink(size, flavor);
+        order.addItem(drink);
+
+
 
         return drink;
     }
@@ -136,7 +137,5 @@ public class UserInterface {
 
     public void cancelOrder() {
     }
-
-
 
 }
