@@ -1,4 +1,4 @@
-package com.pluralsight.Plaza.Pizzeria.pizza;
+package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 

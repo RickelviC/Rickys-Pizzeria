@@ -1,6 +1,6 @@
 package com.pluralsight.Plaza;
 
-import com.pluralsight.Plaza.Pizzeria.pizza.UserInterface;
+import com.pluralsight.Plaza.Pizzeria.main.UserInterface;
 
 public class Main {
     public static void main(String[] args) {
