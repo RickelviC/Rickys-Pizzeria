@@ -12,7 +12,10 @@ public class PremiumCheeseTopping extends PremiumTopping {
 
         if (size == 8) {
             return .75;
-        }
-        return 1;
+        } else if (size == 12) {
+            return 1.50;
+        } else if (size == 16) {
+            return 2.25;
+        } else return 0;
     }
 }

@@ -7,6 +7,12 @@ public class PremiumMeatTopping extends PremiumTopping{
 
     @Override
     public double getPrice(int size) {
-        return 1;
+        if (size == 8) {
+            return 1.0;
+        } else if (size == 12) {
+            return 2.0;
+        } else if (size == 16) {
+            return 3.0;
+        } else return 0;
     }
 }
