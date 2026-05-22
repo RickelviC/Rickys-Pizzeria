@@ -14,5 +14,5 @@ public abstract class Topping {
     public void setOption(String option) {
         this.option = option;
     }
-    public abstract int getPrice(int size);
+    public abstract double getPrice(int size);
 }

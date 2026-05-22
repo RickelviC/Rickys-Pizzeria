@@ -6,7 +6,7 @@ public class SideTopping extends Topping{
     }
 
     @Override
-    public int getPrice(int size) {
+    public double getPrice(int size) {
         return 0;
     }
 }
