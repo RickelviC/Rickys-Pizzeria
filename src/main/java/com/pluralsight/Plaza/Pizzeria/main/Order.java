@@ -33,14 +33,10 @@ public class Order {
 
     public double getTotalPrice(){
         double totalPrice = 0;
-        double totalPizzaPrice = 0;
-        double totalDrinkPrice = 0;
-        double totalKnotPrice = 0;
 
-
-
-
-        totalPrice = totalPizzaPrice + totalDrinkPrice + totalKnotPrice;
+        for (IPriceable price : item) {
+            totalPrice += price.getPrice();
+        }
         return totalPrice;
     }
 }
