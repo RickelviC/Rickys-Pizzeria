@@ -3,10 +3,9 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.products.Pizza;
-import com.pluralsight.Plaza.Pizzeria.toppings.Cheese;
-import com.pluralsight.Plaza.Pizzeria.toppings.Meat;
-import com.pluralsight.Plaza.Pizzeria.toppings.Topping;
+import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -76,7 +75,7 @@ public class UserInterface {
             System.out.println("2) type of crust");
             System.out.println("3) stuffed crust");
             System.out.println("4) Topping");
-            System.out.println("0) go back");
+            System.out.println("0) finish pizza and go back");
 
 
             System.out.print("Enter your choice: ");
@@ -253,7 +252,6 @@ public class UserInterface {
                     allTops.add(topping);
                     break;
                 case "0":
-                    cancelOrder();
                     quit = true;
                     break;
                 default:
@@ -315,7 +313,6 @@ public class UserInterface {
                     allTops.add(topping);
                     break;
                 case "0":
-                    cancelOrder();
                     quit = true;
                     break;
                 default:
@@ -325,16 +322,184 @@ public class UserInterface {
     }
 
     public void regularTopping() {
+
+        boolean quit = false;
+        Regular topping;
+        String regular;
+
+        while (!quit) {
+            System.out.println("what type of Regular Toppings would you like");
+            System.out.println();
+            System.out.println("1) onions");
+            System.out.println("2) mushrooms");
+            System.out.println("3) bell peppers");
+            System.out.println("4) olives");
+            System.out.println("5) tomatoes");
+            System.out.println("6) spinach");
+            System.out.println("7) basil");
+            System.out.println("8) pineapple");
+            System.out.println("9) anchovies");
+            System.out.println("0) go back");
+            System.out.println();
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    regular = "onions";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "2":
+                    regular = "mushrooms";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "3":
+                    regular = "bell peppers";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "4":
+                    regular = "olives";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "5":
+                    regular = "tomatoes";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "6":
+                    regular = "spinach";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "7":
+                    regular = "basil";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "8":
+                    regular = "pineapple";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "9":
+                    regular = "anchovies";
+                    topping = new Regular(regular);
+                    allTops.add(topping);
+                    break;
+                case "0":
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
     public void sauceTopping() {
+
+        boolean quit = false;
+        Sauce topping;
+        String sauce;
+
+        while (!quit) {
+            System.out.println("what type of Sauce would you like");
+            System.out.println();
+            System.out.println("1) marinara");
+            System.out.println("2) Alfredo");
+            System.out.println("3) pesto");
+            System.out.println("4) bbq");
+            System.out.println("5) buffalo");
+            System.out.println("6) olive oil");
+            System.out.println("0) go back");
+            System.out.println();
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    sauce = "marinara";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "2":
+                    sauce = "alfredo";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "3":
+                    sauce = "pesto";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "4":
+                    sauce = "bbq";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "5":
+                    sauce = "buffalo";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "6":
+                    sauce = "olive oil";
+                    topping = new Sauce(sauce);
+                    allTops.add(topping);
+                    break;
+                case "0":
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
     public void sideTopping() {
+
+        boolean quit = false;
+        Side topping;
+        String side;
+
+        while (!quit) {
+            System.out.println("what type of sides would you like");
+            System.out.println();
+            System.out.println("1) red pepper");
+            System.out.println("2) Parmesan");
+            System.out.println("0) go back");
+            System.out.println();
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    side = "red pepper";
+                    topping = new Side(side);
+                    allTops.add(topping);
+                    break;
+                case "2":
+                    side = "parmesan";
+                    topping = new Side(side);
+                    allTops.add(topping);
+                    break;
+                case "0":
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
     public void finishPizza() {
-        Pizza pizza = new Pizza(allTops,size,stuffed,crust);
+        Pizza pizza = new Pizza(allTops, size, stuffed, crust);
         order.addItem(pizza);
     }
 
@@ -370,6 +535,10 @@ public class UserInterface {
     }
 
     public void cancelOrder() {
+
+        //order.removeItem();
+
+        System.out.println("order cleared");
     }
 
     public boolean isExtra(String option) {
