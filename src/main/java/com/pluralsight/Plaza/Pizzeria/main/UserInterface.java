@@ -143,15 +143,6 @@ public class UserInterface {
         }
     }
 
-    /*
-      making all the items that are the same in to one on display
-      example drink small 4
-        HashSet<Product> uniqueProduct = new HashSet<>(cart);
-
-        for (Product product : uniqueProduct) {
-            System.out.println(product + " " + Collections.frequency(cart, product));
-        }
-     */
     public boolean stuffed() {
         System.out.println("do you want your crust stuffed? (Yes/No)");
         String type = scanner.nextLine();
@@ -535,6 +526,16 @@ public class UserInterface {
     }
 
     public void cancelOrder() {
+
+            /*
+      making all the items that are the same in to one on display
+      example drink small 4
+        HashSet<Product> uniqueProduct = new HashSet<>(cart);
+
+        for (Product product : uniqueProduct) {
+            System.out.println(product + " " + Collections.frequency(cart, product));
+        }
+     */
 
         //order.removeItem();
 
