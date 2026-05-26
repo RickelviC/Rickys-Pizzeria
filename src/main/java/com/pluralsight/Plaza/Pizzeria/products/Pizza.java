@@ -56,11 +56,26 @@ public class Pizza implements IPriceable{
     @Override
     public double getPrice() {
         if (size == 8) {
-            return 8.50;
+            double price = 8.50;
+            for (Topping topping : toppings) {
+                price += topping.getPrice(size);
+            }
+            return price;
+
         } else if (size == 12) {
-            return 12.0;
+            double price = 12.0;
+            for (Topping topping : toppings) {
+                price += topping.getPrice(size);
+            }
+            return price;
+
         } else if (size == 16) {
-            return 16.50;
+            double price = 16.50;
+            for (Topping topping : toppings) {
+                price += topping.getPrice(size);
+            }
+            return price;
+
         } else return 0;
     }
 }

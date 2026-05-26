@@ -3,10 +3,13 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.products.Pizza;
+import com.pluralsight.Plaza.Pizzeria.toppings.Cheese;
 import com.pluralsight.Plaza.Pizzeria.toppings.Meat;
+import com.pluralsight.Plaza.Pizzeria.toppings.Topping;
 
-
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -17,6 +20,7 @@ public class UserInterface {
     private int size;
     String crust;
     boolean stuffed;
+    List<Topping> allTops = new ArrayList<>();
 
     public UserInterface() {
         //UUID is a 36-character string made up of 5 groups of hexadecimal digits separated by hyphens
@@ -31,12 +35,12 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Menu ----------");
-            System.out.println("1. make your pizza");
-            System.out.println("2. get your drink");
-            System.out.println("3. get Garlic Knot");
-            System.out.println("4. check out");
-            System.out.println("5. cancel order");
-            System.out.println("6. Quit");
+            System.out.println("1) make your pizza");
+            System.out.println("2) get your drink");
+            System.out.println("3) get Garlic Knot");
+            System.out.println("4) check out");
+            System.out.println("5) cancel order");
+            System.out.println("0) Quit");
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
@@ -68,12 +72,12 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Pizza Menu ----------");
-            System.out.println("1. size of pizza");
-            System.out.println("2. type of crust");
-            System.out.println("3. stuffed crust");
-            System.out.println("4. Topping");
-            System.out.println("5. finish your pizza");
-            System.out.println("6. go back");
+            System.out.println("1) size of pizza");
+            System.out.println("2) type of crust");
+            System.out.println("3) stuffed crust");
+            System.out.println("4) Topping");
+            System.out.println("5) finish your pizza");
+            System.out.println("0) go back");
 
 
             System.out.print("Enter your choice: ");
@@ -95,7 +99,7 @@ public class UserInterface {
                 case "5":
                     finishPizza();
                     break;
-                case "6":
+                case "0":
                     quit = true;
                     break;
                 default:
@@ -108,19 +112,19 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Topping Menu ----------");
-            System.out.println("1. meat options");
-            System.out.println("2. cheese options");
-            System.out.println("3. regular toppings");
-            System.out.println("4. sauce topping");
-            System.out.println("5. side topping");
-            System.out.println("6. go back");
+            System.out.println("1) meat options");
+            System.out.println("2) cheese options");
+            System.out.println("3) regular toppings");
+            System.out.println("4) sauce topping");
+            System.out.println("5) side topping");
+            System.out.println("0) go back");
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1":
-                    meatTopping(size);
+                    meatTopping();
                     break;
                 case "2":
                     cheeseTopping();
@@ -134,7 +138,7 @@ public class UserInterface {
                 case "5":
                     sideTopping();
                     break;
-                case "6":
+                case "0":
                     quit = true;
                     break;
                 default:
@@ -192,7 +196,7 @@ public class UserInterface {
         return size;
     }
 
-    public Meat meatTopping(int size) {
+    public void meatTopping() {
 
         boolean quit = false;
         Meat topping = null;
@@ -208,6 +212,7 @@ public class UserInterface {
             System.out.println("4) bacon");
             System.out.println("5) chicken");
             System.out.println("6) meatball");
+            System.out.println("0) go back");
             System.out.println();
 
             System.out.print("Enter your choice: ");
@@ -218,31 +223,37 @@ public class UserInterface {
                     meat = "pepperoni";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "2":
                     meat = "sausage";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "3":
                     meat = "ham";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "4":
                     meat = "bacon";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "5":
                     meat = "chicken";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "6":
                     meat = "meatball";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
+                    allTops.add(topping);
                     break;
                 case "0":
                     cancelOrder();
@@ -252,10 +263,68 @@ public class UserInterface {
                     System.out.println("Invalid choice. Please try again.");
             }
         }
-        return topping;
+
     }
 
     public void cheeseTopping() {
+        boolean quit = false;
+        Cheese topping = null;
+        String cheese;
+        boolean extra;
+
+        while (!quit) {
+            System.out.println("what type of cheese would you like");
+            System.out.println();
+            System.out.println("1) Mozzarella");
+            System.out.println("2) Parmesan");
+            System.out.println("3) Ricotta");
+            System.out.println("4) Goat Cheese");
+            System.out.println("5) Buffalo");
+            System.out.println("0) go back");
+            System.out.println();
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    cheese = "Mozzarella";
+                    extra = isExtra(cheese);
+                    topping = new Cheese(cheese, extra);
+                    allTops.add(topping);
+                    break;
+                case "2":
+                    cheese = "Parmesan";
+                    extra = isExtra(cheese);
+                    topping = new Cheese(cheese, extra);
+                    allTops.add(topping);
+                    break;
+                case "3":
+                    cheese = "Ricotta";
+                    extra = isExtra(cheese);
+                    topping = new Cheese(cheese, extra);
+                    allTops.add(topping);
+                    break;
+                case "4":
+                    cheese = "Goat Cheese";
+                    extra = isExtra(cheese);
+                    topping = new Cheese(cheese, extra);
+                    allTops.add(topping);
+                    break;
+                case "5":
+                    cheese = "Buffalo";
+                    extra = isExtra(cheese);
+                    topping = new Cheese(cheese, extra);
+                    allTops.add(topping);
+                    break;
+                case "0":
+                    cancelOrder();
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
     }
 
     public void regularTopping() {
@@ -268,6 +337,8 @@ public class UserInterface {
     }
 
     public void finishPizza() {
+        Pizza pizza = new Pizza(allTops,size,stuffed,crust);
+        order.addItem(pizza);
     }
 
     public void makeDrink() {
@@ -297,6 +368,8 @@ public class UserInterface {
     }
 
     public void checkOut() {
+        double price = order.getTotalPrice();
+        System.out.println(price);
     }
 
     public void cancelOrder() {
