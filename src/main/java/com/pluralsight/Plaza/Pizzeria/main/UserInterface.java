@@ -1,7 +1,10 @@
 package com.pluralsight.Plaza.Pizzeria.main;
 
+
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.toppings.Meat;
+
 
 
 import java.util.Scanner;
@@ -131,7 +134,6 @@ public class UserInterface {
                 case "5":
                     sideTopping();
                     break;
-
                 case "6":
                     quit = true;
                     break;
@@ -190,26 +192,67 @@ public class UserInterface {
         return size;
     }
 
-    public void meatTopping(int size) {
-
-        System.out.println("what type of meat would you like");
-        System.out.println();
-        System.out.println("1) pepperoni");
-        System.out.println("2) sausage");
-        System.out.println("3) ham");
-        System.out.println("4) bacon");
-        System.out.println("5) chicken");
-        System.out.println("6) meatball");
-        System.out.println();
-
-        int option = scanner.nextInt();
+    public Meat meatTopping(int size) {
 
         boolean quit = false;
-        while (!quit) {
-            if (option == 1) {
+        Meat topping = null;
+        String meat;
+        boolean extra;
 
+        while (!quit) {
+            System.out.println("what type of meat would you like");
+            System.out.println();
+            System.out.println("1) pepperoni");
+            System.out.println("2) sausage");
+            System.out.println("3) ham");
+            System.out.println("4) bacon");
+            System.out.println("5) chicken");
+            System.out.println("6) meatball");
+            System.out.println();
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    meat = "pepperoni";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "2":
+                    meat = "sausage";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "3":
+                    meat = "ham";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "4":
+                    meat = "bacon";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "5":
+                    meat = "chicken";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "6":
+                    meat = "meatball";
+                    extra = isExtra(meat);
+                    topping = new Meat(meat, extra);
+                    break;
+                case "0":
+                    cancelOrder();
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
+        return topping;
     }
 
     public void cheeseTopping() {
@@ -230,10 +273,10 @@ public class UserInterface {
     public void makeDrink() {
 
         System.out.println("======= Drink sizes ======");
-
-        System.out.println("Small");
-        System.out.println("Medium");
-        System.out.println("Large");
+        // change to numbers later
+        System.out.println("1) Small");
+        System.out.println("2) Medium");
+        System.out.println("3) Large");
 
         System.out.print("enter the size of your drink: ");
         String size = scanner.nextLine();
@@ -246,7 +289,7 @@ public class UserInterface {
     }
 
     public void makeGarlicKnot() {
-        System.out.println("enter the flavor of your drink: ");
+        System.out.println("enter the flavor of your Garlic Knots: ");
         String flavor = scanner.nextLine();
 
         GarlicKnots knots = new GarlicKnots(flavor);
@@ -257,6 +300,19 @@ public class UserInterface {
     }
 
     public void cancelOrder() {
+    }
+
+    public boolean isExtra(String option) {
+        boolean isExtra;
+        System.out.println("do you want extra " + option + "?(Yes/No): ");
+        String extra = scanner.nextLine();
+        if (extra.equalsIgnoreCase("yes")) {
+            isExtra = true;
+        } else {
+            isExtra = false;
+        }
+
+        return isExtra;
     }
 
 }
