@@ -3,7 +3,6 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
-import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
