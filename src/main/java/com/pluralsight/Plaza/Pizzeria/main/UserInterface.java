@@ -76,7 +76,6 @@ public class UserInterface {
             System.out.println("2) type of crust");
             System.out.println("3) stuffed crust");
             System.out.println("4) Topping");
-            System.out.println("5) finish your pizza");
             System.out.println("0) go back");
 
 
@@ -96,10 +95,8 @@ public class UserInterface {
                 case "4":
                     pizzaToppingMenu();
                     break;
-                case "5":
-                    finishPizza();
-                    break;
                 case "0":
+                    finishPizza();
                     quit = true;
                     break;
                 default:
@@ -199,7 +196,7 @@ public class UserInterface {
     public void meatTopping() {
 
         boolean quit = false;
-        Meat topping = null;
+        Meat topping;
         String meat;
         boolean extra;
 
@@ -268,7 +265,7 @@ public class UserInterface {
 
     public void cheeseTopping() {
         boolean quit = false;
-        Cheese topping = null;
+        Cheese topping;
         String cheese;
         boolean extra;
 

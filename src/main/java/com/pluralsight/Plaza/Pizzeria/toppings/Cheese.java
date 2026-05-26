@@ -9,13 +9,28 @@ public class Cheese extends PremiumTopping {
 
     @Override
     public double getPrice(int size) {
-
+        double price;
         if (size == 8) {
-            return .75;
+            price = .75;
+            if (isExtra()) {
+                price += .30;
+            }
+            return price;
+
         } else if (size == 12) {
-            return 1.50;
+            price = 1.50;
+            if (isExtra()) {
+                price += .60;
+            }
+            return price;
+
         } else if (size == 16) {
-            return 2.25;
+            price = 2.25;
+            if (isExtra()) {
+                price += .90;
+            }
+            return price;
+
         } else return 0;
     }
 }
