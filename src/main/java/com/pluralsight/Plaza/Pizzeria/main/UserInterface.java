@@ -3,6 +3,7 @@ package com.pluralsight.Plaza.Pizzeria.main;
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
 
+
 import java.util.Scanner;
 import java.util.UUID;
 
@@ -10,6 +11,9 @@ public class UserInterface {
 
     private Scanner scanner;
     private Order order;
+    private int size;
+    String crust;
+    boolean stuffed;
 
     public UserInterface() {
         //UUID is a 36-character string made up of 5 groups of hexadecimal digits separated by hyphens
@@ -58,7 +62,46 @@ public class UserInterface {
     }
 
     public void pizzaMenu() {
-        int size = pizzaSize();
+        boolean quit = false;
+        while (!quit) {
+            System.out.println("---------- Pizza Menu ----------");
+            System.out.println("1. size of pizza");
+            System.out.println("2. type of crust");
+            System.out.println("3. stuffed crust");
+            System.out.println("4. Topping");
+            System.out.println("5. finish your pizza");
+            System.out.println("6. go back");
+
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    size = pizzaSize();
+                    break;
+                case "2":
+                    crust = crustType();
+                    break;
+                case "3":
+                    stuffed = stuffed();
+                    break;
+                case "4":
+                    pizzaToppingMenu();
+                    break;
+                case "5":
+                    finishPizza();
+                    break;
+                case "6":
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    public void pizzaToppingMenu() {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Topping Menu ----------");
@@ -67,40 +110,35 @@ public class UserInterface {
             System.out.println("3. regular toppings");
             System.out.println("4. sauce topping");
             System.out.println("5. side topping");
-            System.out.println("6. finish your pizza");
-            System.out.println("7. go back");
+            System.out.println("6. go back");
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1":
-
+                    meatTopping(size);
                     break;
                 case "2":
-
+                    cheeseTopping();
                     break;
                 case "3":
-
+                    regularTopping();
                     break;
                 case "4":
-
+                    sauceTopping();
                     break;
                 case "5":
-
+                    sideTopping();
                     break;
 
                 case "6":
-
-                    break;
-                case "7":
                     quit = true;
                     break;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
         }
-
     }
 
     /*
@@ -112,6 +150,33 @@ public class UserInterface {
             System.out.println(product + " " + Collections.frequency(cart, product));
         }
      */
+    public boolean stuffed() {
+        System.out.println("do you want your crust stuffed? (Yes/No)");
+        String type = scanner.nextLine();
+        return type.equalsIgnoreCase("yes");
+    }
+
+    public String crustType() {
+        //- thin - regular - thick - cauliflower
+        System.out.println("what type of crust would you like");
+        System.out.println();
+        System.out.println("1) thin");
+        System.out.println("2) regular");
+        System.out.println("3) thick");
+        System.out.println("4) cauliflower");
+        System.out.println();
+
+        int type = scanner.nextInt();
+        if (type == 1) {
+            return "thin";
+        } else if (type == 2) {
+            return "regular";
+        } else if (type == 3) {
+            return "thick";
+        } else {
+            return "cauliflower";
+        }
+    }
 
     public int pizzaSize() {
 
@@ -123,7 +188,6 @@ public class UserInterface {
         scanner.nextLine();
 
         return size;
-
     }
 
     public void meatTopping(int size) {
@@ -138,7 +202,14 @@ public class UserInterface {
         System.out.println("6) meatball");
         System.out.println();
 
+        int option = scanner.nextInt();
 
+        boolean quit = false;
+        while (!quit) {
+            if (option == 1) {
+
+            }
+        }
     }
 
     public void cheeseTopping() {
