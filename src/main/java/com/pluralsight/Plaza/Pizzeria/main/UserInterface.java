@@ -3,6 +3,7 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
@@ -172,12 +173,31 @@ public class UserInterface {
 
     public int pizzaSize() {
 
-        System.out.println("8) Small $8.50");
-        System.out.println("12) Medium $12.0");
-        System.out.println("16) Large $16.50");
+        System.out.println("1) 8 inch Small $8.50");
+        System.out.println("2) 12 inch Medium $12.0");
+        System.out.println("3) 16 inch Large $16.50");
 
-        int size = scanner.nextInt();
-        scanner.nextLine();
+        boolean pass = false;
+        while (!pass) {
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("1")) {
+                size = 8;
+                System.out.println("you chose a " + size + " inch pizza");
+                pass = true;
+            }else if (input.equalsIgnoreCase("2")) {
+                size = 12;
+                System.out.println("you chose a " + size + " inch pizza");
+                pass = true;
+            } else if (input.equalsIgnoreCase("3")) {
+                size = 16;
+                System.out.println("you chose a " + size + " inch pizza");
+                pass = true;
+            } else {
+                System.out.println("enter one of the options");
+            }
+
+        }
 
         return size;
     }
@@ -522,11 +542,8 @@ public class UserInterface {
     public void checkOut() {
         double price = order.getTotalPrice();
         System.out.println(price);
-    }
 
-    public void cancelOrder() {
-
-            /*
+    /*
       making all the items that are the same in to one on display
       example drink small 4
         HashSet<Product> uniqueProduct = new HashSet<>(cart);
@@ -534,10 +551,12 @@ public class UserInterface {
         for (Product product : uniqueProduct) {
             System.out.println(product + " " + Collections.frequency(cart, product));
         }
-     */
+    */
+    }
 
-        //order.removeItem();
+    public void cancelOrder() {
 
+        order.getItems().clear();
         System.out.println("order cleared");
     }
 
