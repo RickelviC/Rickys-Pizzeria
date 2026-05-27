@@ -3,7 +3,6 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
-import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
@@ -145,8 +144,28 @@ public class UserInterface {
 
     public boolean stuffed() {
         System.out.println("do you want your crust stuffed? (Yes/No)");
-        String type = scanner.nextLine();
-        return type.equalsIgnoreCase("yes");
+        System.out.println("1) yes");
+        System.out.println("2) no");
+        System.out.println();
+
+        boolean pass = false;
+
+        while (!pass) {
+
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("1")) {
+                stuffed = true;
+                System.out.println("you chose stuffed crust");
+                pass = true;
+            }else if (input.equalsIgnoreCase("2")) {
+                System.out.println("you chose no stuffed crust");
+                pass = true;
+            } else {
+                System.out.println("enter one of the options");
+            }
+        }
+       return stuffed;
     }
 
     public String crustType() {
@@ -159,7 +178,6 @@ public class UserInterface {
         System.out.println();
 
         boolean pass = false;
-        String crust = "";
         while (!pass) {
             String input = scanner.nextLine();
 
