@@ -1,6 +1,6 @@
-package com.pluralsight.Plaza.Pizzeria.main;
+package com.pluralsight.Plaza.Pizzeria.model;
 
-import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
+import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,8 +34,6 @@ public class Order {
     public void addItem(IPriceable item){
         items.add(item);
     }
-
-
 
     public double getTotalPrice(){
         double totalPrice = 0;

@@ -1,4 +1,4 @@
-package com.pluralsight.Plaza.Pizzeria.toppings;
+package com.pluralsight.Plaza.Pizzeria.model.toppings;
 
 public abstract class PremiumTopping extends Topping{
     private boolean isExtra;

@@ -1,8 +1,12 @@
-package com.pluralsight.Plaza.Pizzeria.main;
+package com.pluralsight.Plaza.Pizzeria.ui;
 
 
-import com.pluralsight.Plaza.Pizzeria.products.*;
-import com.pluralsight.Plaza.Pizzeria.toppings.*;
+import com.pluralsight.Plaza.Pizzeria.model.Order;
+import com.pluralsight.Plaza.Pizzeria.model.products.Drink;
+import com.pluralsight.Plaza.Pizzeria.model.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
+import com.pluralsight.Plaza.Pizzeria.model.products.Pizza;
+import com.pluralsight.Plaza.Pizzeria.model.toppings.*;
 
 import java.util.*;
 

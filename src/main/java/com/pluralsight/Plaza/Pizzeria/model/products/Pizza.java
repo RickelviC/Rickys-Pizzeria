@@ -1,10 +1,11 @@
-package com.pluralsight.Plaza.Pizzeria.products;
+package com.pluralsight.Plaza.Pizzeria.model.products;
 
-import com.pluralsight.Plaza.Pizzeria.toppings.Topping;
+import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
+import com.pluralsight.Plaza.Pizzeria.model.toppings.Topping;
 
 import java.util.List;
 
-public class Pizza implements IPriceable{
+public class Pizza implements IPriceable {
     private List<Topping> toppings;
     private int size;
     private boolean stuffed;

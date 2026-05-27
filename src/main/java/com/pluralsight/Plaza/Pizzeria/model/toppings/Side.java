@@ -1,4 +1,4 @@
-package com.pluralsight.Plaza.Pizzeria.toppings;
+package com.pluralsight.Plaza.Pizzeria.model.toppings;
 
 public class Side extends Topping{
     public Side(String option) {

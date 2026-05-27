@@ -1,4 +1,6 @@
-package com.pluralsight.Plaza.Pizzeria.products;
+package com.pluralsight.Plaza.Pizzeria.model.products;
+
+import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
 
 public class GarlicKnots implements IPriceable {
     private String flavor;
