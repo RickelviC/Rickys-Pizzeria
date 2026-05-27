@@ -81,7 +81,7 @@ public class Pizza implements IPriceable{
 
     @Override
     public String toString() {
-        return "\nPizza\ntoppings: " + toppings +
+        return "Pizza | toppings: \n" + toppings +
                 "| size: " + size +
                 "| stuffed: " + stuffed +
                 "| crustType: " + crustType;

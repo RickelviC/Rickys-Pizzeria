@@ -50,6 +50,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Id: " + Id + " | items: " + items;
+        return "Id: " + Id + "\n  items: " + items;
     }
 }
