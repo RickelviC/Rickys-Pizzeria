@@ -9,6 +9,7 @@ import com.pluralsight.Plaza.Pizzeria.model.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.model.toppings.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserInterface {
 
@@ -637,8 +638,10 @@ public class UserInterface {
 
         HashSet<IPriceable> uniqueItems = new HashSet<>(order.getItems());
 
+        //Collectors.groupingBy()
+
         for (IPriceable item : uniqueItems) {
-            System.out.println(item + " " + Collections.frequency(uniqueItems, item));
+            System.out.println(item);
         }
 
     }

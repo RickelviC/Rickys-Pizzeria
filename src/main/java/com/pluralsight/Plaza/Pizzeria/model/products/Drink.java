@@ -42,6 +42,13 @@ public class Drink implements IPriceable {
 
     @Override
     public String toString() {
-        return "\nDrink\nsize: " + size + "| flavor: " + flavor;
+
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("---- Drink ----\n");
+        builder.append("size    : " + size + "\n");
+        builder.append("flavor  : " + flavor + "\n");
+
+        return builder.toString();
     }
 }

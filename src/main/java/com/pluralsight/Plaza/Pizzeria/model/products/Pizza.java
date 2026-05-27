@@ -3,6 +3,7 @@ package com.pluralsight.Plaza.Pizzeria.model.products;
 import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.model.toppings.Topping;
 
+import java.util.Collections;
 import java.util.List;
 
 public class Pizza implements IPriceable {
@@ -82,9 +83,20 @@ public class Pizza implements IPriceable {
 
     @Override
     public String toString() {
-        return "Pizza | toppings: \n" + toppings +
-                "| size: " + size +
-                "| stuffed: " + stuffed +
-                "| crustType: " + crustType;
+        StringBuilder builder = new StringBuilder();
+        builder.append("---- Pizza ----\n");
+        builder.append(String.format(" size     : %d\n", size));
+        builder.append(String.format("crust type: %s\n", crustType));
+        builder.append(String.format("stuffed   : %s\n", stuffed ? "Yes" : "No"));
+        builder.append("  toppings   :\n");
+
+        if (toppings.isEmpty()) {
+            builder.append(" - none\n");
+        } else {
+            for (Topping topping : toppings) {
+                builder.append(" - ").append(topping).append("\n");
+            }
+        }
+        return builder.toString();
     }
 }

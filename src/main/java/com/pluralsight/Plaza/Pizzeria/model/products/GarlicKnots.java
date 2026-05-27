@@ -24,6 +24,11 @@ public class GarlicKnots implements IPriceable {
 
     @Override
     public String toString() {
-        return "\nGarlicKnots\nflavor: " + flavor;
+        StringBuilder builder = new StringBuilder();
+
+        builder.append("---- Garlic Knots ----\n");
+        builder.append("flavor  : " + flavor + "\n");
+
+        return builder.toString();
     }
 }
