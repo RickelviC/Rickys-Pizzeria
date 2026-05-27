@@ -614,15 +614,27 @@ public class UserInterface {
     }
 
     public boolean isExtra(String option) {
-        boolean isExtra;
+        boolean isExtra = false;
         System.out.println("do you want extra " + option + "?(Yes/No): ");
-        String extra = scanner.nextLine();
-        if (extra.equalsIgnoreCase("yes")) {
-            isExtra = true;
-        } else {
-            isExtra = false;
-        }
+        System.out.println("1) Yes");
+        System.out.println("2) NO");
+        System.out.println();
 
+        boolean pass = false;
+        while (!pass) {
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("1")) {
+                isExtra = true;
+                System.out.println("you chose to get extra " + option + " on your pizza");
+                pass = true;
+            } else if (input.equalsIgnoreCase("2")) {
+                System.out.println("you chose to get extra " + option + " on your pizza");
+                pass = true;
+            } else {
+                System.out.println("enter one of the options");
+            }
+        }
         return isExtra;
     }
 
