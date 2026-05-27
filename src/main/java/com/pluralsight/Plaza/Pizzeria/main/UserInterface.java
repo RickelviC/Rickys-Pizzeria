@@ -593,8 +593,19 @@ public class UserInterface {
     }
 
     public void checkOut() {
-        double price = order.getTotalPrice();
-        System.out.println(price);
+        boolean pass = false;
+        while (!pass){
+            if (!(order.getTotalPrice() == 0)){
+                double price = order.getTotalPrice();
+                System.out.println(price);
+                pass =true;
+            }
+            if (order.getTotalPrice() == 0){
+                System.out.println("get something first to check out");
+                pass = true;
+            }
+        }
+
 
     /*
       making all the items that are the same in to one on display
