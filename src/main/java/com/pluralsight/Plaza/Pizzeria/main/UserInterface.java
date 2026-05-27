@@ -150,7 +150,6 @@ public class UserInterface {
     }
 
     public String crustType() {
-        //- thin - regular - thick - cauliflower
         System.out.println("what type of crust would you like");
         System.out.println();
         System.out.println("1) thin");
@@ -159,16 +158,33 @@ public class UserInterface {
         System.out.println("4) cauliflower");
         System.out.println();
 
-        int type = scanner.nextInt();
-        if (type == 1) {
-            return "thin";
-        } else if (type == 2) {
-            return "regular";
-        } else if (type == 3) {
-            return "thick";
-        } else {
-            return "cauliflower";
+        boolean pass = false;
+        String crust = "";
+        while (!pass) {
+            String input = scanner.nextLine();
+
+            if (input.equalsIgnoreCase("1")) {
+                crust = "think";
+                System.out.println("you chose a " + crust + " crust");
+                pass = true;
+            } else if (input.equalsIgnoreCase("2")) {
+                crust = "regular";
+                System.out.println("you chose a " + crust + " crust");
+                pass = true;
+            } else if (input.equalsIgnoreCase("3")) {
+                crust = "thick";
+                System.out.println("you chose a " + crust + " crust");
+                pass = true;
+
+            } else if (input.equalsIgnoreCase("4")) {
+                crust = "cauliflower";
+                System.out.println("you chose a " + crust + " crust");
+                pass = true;
+            } else {
+                System.out.println("enter one of the options");
+            }
         }
+        return crust;
     }
 
     public int pizzaSize() {
@@ -185,7 +201,7 @@ public class UserInterface {
                 size = 8;
                 System.out.println("you chose a " + size + " inch pizza");
                 pass = true;
-            }else if (input.equalsIgnoreCase("2")) {
+            } else if (input.equalsIgnoreCase("2")) {
                 size = 12;
                 System.out.println("you chose a " + size + " inch pizza");
                 pass = true;
@@ -516,14 +532,31 @@ public class UserInterface {
     public void makeDrink() {
 
         System.out.println("======= Drink sizes ======");
-        // change to numbers later
         System.out.println("1) Small");
         System.out.println("2) Medium");
         System.out.println("3) Large");
+        boolean pass = false;
+        String size = "";
+        while (!pass) {
 
-        System.out.print("enter the size of your drink: ");
-        String size = scanner.nextLine();
+            String input = scanner.nextLine();
 
+            if (input.equalsIgnoreCase("1")) {
+                size = "small";
+                System.out.println("you chose a " + size + " Drink");
+                pass = true;
+            } else if (input.equalsIgnoreCase("2")) {
+                size = "medium";
+                System.out.println("you chose a " + size + " Drink");
+                pass = true;
+            } else if (input.equalsIgnoreCase("3")) {
+                size = "large";
+                System.out.println("you chose a " + size + " Drink");
+                pass = true;
+            } else {
+                System.out.println("enter one of the options");
+            }
+        }
         System.out.println("enter the flavor of your drink: ");
         String flavor = scanner.nextLine();
 

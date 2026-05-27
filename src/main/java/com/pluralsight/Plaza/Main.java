@@ -13,7 +13,7 @@ public class Main {
             System.out.println("where would you like to place an order at today?");
             System.out.println();
             System.out.println("1) Ricky's Pizzeria");
-            System.out.println("4. to quit");
+            System.out.println("0) to quit");
             System.out.print("Enter your choice: ");
             System.out.println();
             String choice = scanner.nextLine();
@@ -29,7 +29,7 @@ public class Main {
                 case "3":
 
                     break;
-                case "4":
+                case "0":
                     quit = true;
                     break;
                 default:
