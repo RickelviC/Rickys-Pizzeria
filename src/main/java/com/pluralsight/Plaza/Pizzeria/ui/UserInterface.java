@@ -78,7 +78,8 @@ public class UserInterface {
             System.out.println("2) type of crust");
             System.out.println("3) stuffed crust");
             System.out.println("4) Topping");
-            System.out.println("0) finish pizza and go back");
+            System.out.println("5) finish pizza and go back");
+            System.out.println("0) go back");
 
 
             System.out.print("Enter your choice: ");
@@ -96,6 +97,9 @@ public class UserInterface {
                     break;
                 case "4":
                     pizzaToppingMenu();
+                    break;
+                case "5":
+                    finishPizza();
                     break;
                 case "0":
                     finishPizza();
@@ -572,8 +576,14 @@ public class UserInterface {
     }
 
     public void finishPizza() {
-        Pizza pizza = new Pizza(allTops, size, stuffed, crust);
-        order.addItem(pizza);
+
+        if (size != 0){
+            Pizza pizza = new Pizza(allTops, size, stuffed, crust);
+            order.addItem(pizza);
+        }else {
+            System.out.println("more options needed to make the pizza");
+        }
+
     }
 
     public void makeDrink() {
