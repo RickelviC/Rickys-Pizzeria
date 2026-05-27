@@ -1,14 +1,10 @@
 package com.pluralsight.Plaza.Pizzeria.main;
 
 
-import com.pluralsight.Plaza.Pizzeria.products.Drink;
-import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
-import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
-import com.pluralsight.Plaza.Pizzeria.products.Pizza;
+import com.pluralsight.Plaza.Pizzeria.products.*;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class UserInterface {
 
@@ -106,8 +102,30 @@ public class UserInterface {
         }
     }
 
-    public void comboMeal() {
+/*
+    public void signaturePizzas() {
+
+        List<Topping> toppings = new ArrayList<>();
+
+        Topping cheese = new Cheese("Mozzarella", false);
+        toppings.add(cheese);
+
+        Topping tomatoes = new Regular("tomatoes");
+        toppings.add(tomatoes);
+
+        Topping basil = new Regular("basil");
+        toppings.add(basil);
+
+        Topping marinara = new Regular("marinara");
+        toppings.add(marinara);
+
+        Topping oliveOil = new Regular("olive Oil");
+        toppings.add(oliveOil);
+
+        Pizza margherita = new Pizza(toppings, 12, false, "regular");
+
     }
+*/
 
     public void pizzaToppingMenu() {
         boolean quit = false;
@@ -612,21 +630,12 @@ public class UserInterface {
     }
 
     public void displayOrder() {
-        List<IPriceable> items = order.getItems();
 
-        HashSet<IPriceable> uniqueItems = new HashSet<>(items);
+        HashSet<IPriceable> uniqueItems = new HashSet<>(order.getItems());
 
-/*        int count = Collections.frequency(items, "lol");
-
-        System.out.println(count);
-*/
-
-        for (IPriceable uniqueItem : uniqueItems) {
-            System.out.println(uniqueItem + " " + Collections.frequency(items, uniqueItem));
+        for (IPriceable item : uniqueItems) {
+            System.out.println(item + " " + Collections.frequency(uniqueItems, item));
         }
-
-        items = items.stream().distinct().toList();
-        System.out.println(items);
 
     }
 
