@@ -8,6 +8,7 @@ import com.pluralsight.Plaza.Pizzeria.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class UserInterface {
 
@@ -16,6 +17,7 @@ public class UserInterface {
     private int size;
     String crust;
     boolean stuffed;
+    Drink drink;
     List<Topping> allTops = new ArrayList<>();
 
     public UserInterface() {
@@ -104,6 +106,9 @@ public class UserInterface {
         }
     }
 
+    public void comboMeal() {
+    }
+
     public void pizzaToppingMenu() {
         boolean quit = false;
         while (!quit) {
@@ -159,14 +164,14 @@ public class UserInterface {
                 stuffed = true;
                 System.out.println("you chose stuffed crust");
                 pass = true;
-            }else if (input.equalsIgnoreCase("2")) {
+            } else if (input.equalsIgnoreCase("2")) {
                 System.out.println("you chose no stuffed crust");
                 pass = true;
             } else {
                 System.out.println("enter one of the options");
             }
         }
-       return stuffed;
+        return stuffed;
     }
 
     public String crustType() {
@@ -579,7 +584,7 @@ public class UserInterface {
         System.out.println("enter the flavor of your drink: ");
         String flavor = scanner.nextLine();
 
-        Drink drink = new Drink(size, flavor);
+        drink = new Drink(size, flavor);
         order.addItem(drink);
     }
 
@@ -593,40 +598,36 @@ public class UserInterface {
 
     public void checkOut() {
         boolean pass = false;
-        while (!pass){
-            if (!(order.getTotalPrice() == 0)){
+        while (!pass) {
+            if (!(order.getTotalPrice() == 0)) {
                 double price = order.getTotalPrice();
                 System.out.println(price);
-                pass =true;
+                pass = true;
             }
-            if (order.getTotalPrice() == 0){
+            if (order.getTotalPrice() == 0) {
                 System.out.println("get something first to check out");
                 pass = true;
             }
         }
     }
 
-    public void displayOrder(){
-        /*
-      making all the items that are the same in to one on display
-      example drink small 4
+    public void displayOrder() {
+        List<IPriceable> items = order.getItems();
 
-        HashSet<Product> uniqueProduct = new HashSet<>(cart);
+        HashSet<IPriceable> uniqueItems = new HashSet<>(items);
 
-        for (Product product : uniqueProduct) {
-            System.out.println(product + " " + Collections.frequency(cart, product));
+/*        int count = Collections.frequency(items, "lol");
+
+        System.out.println(count);
+*/
+
+        for (IPriceable uniqueItem : uniqueItems) {
+            System.out.println(uniqueItem + " " + Collections.frequency(items, uniqueItem));
         }
 
+        items = items.stream().distinct().toList();
+        System.out.println(items);
 
-        HashSet<Topping> uniqueProduct = new HashSet<>(allTops);
-
-        for (Topping topping : uniqueProduct) {
-           int count = Collections.frequency( allTops, topping);
-            System.out.println(topping + " " + count);
-        }
-
-         */
-        System.out.println(order);
     }
 
     public void cancelOrder() {

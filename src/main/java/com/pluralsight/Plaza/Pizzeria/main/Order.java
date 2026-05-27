@@ -35,9 +35,7 @@ public class Order {
         items.add(item);
     }
 
-    public void removeItem(IPriceable item){
-        items.remove(item);
-    }
+
 
     public double getTotalPrice(){
         double totalPrice = 0;
