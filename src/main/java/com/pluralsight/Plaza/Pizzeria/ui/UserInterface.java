@@ -7,9 +7,9 @@ import com.pluralsight.Plaza.Pizzeria.model.products.GarlicKnots;
 import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.model.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.model.toppings.*;
+import com.pluralsight.Plaza.Pizzeria.util.FileManager;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class UserInterface {
 
@@ -623,8 +623,8 @@ public class UserInterface {
         boolean pass = false;
         while (!pass) {
             if (!(order.getTotalPrice() == 0)) {
-                double price = order.getTotalPrice();
-                System.out.println(price);
+                FileManager fileManager = new FileManager();
+                fileManager.saveOrder(order);
                 pass = true;
             }
             if (order.getTotalPrice() == 0) {
