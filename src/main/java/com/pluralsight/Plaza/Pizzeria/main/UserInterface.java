@@ -56,8 +56,10 @@ public class UserInterface {
                 case "4":
                     checkOut();
                     break;
-                case "0":
+                case "5":
                     cancelOrder();
+                    break;
+                case "0":
                     quit = true;
                     break;
                 default:
