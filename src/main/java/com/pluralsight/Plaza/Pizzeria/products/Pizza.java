@@ -78,4 +78,12 @@ public class Pizza implements IPriceable{
 
         } else return 0;
     }
+
+    @Override
+    public String toString() {
+        return "\nPizza\ntoppings: " + toppings +
+                "| size: " + size +
+                "| stuffed: " + stuffed +
+                "| crustType: " + crustType;
+    }
 }

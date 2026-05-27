@@ -3,13 +3,11 @@ package com.pluralsight.Plaza.Pizzeria.main;
 
 import com.pluralsight.Plaza.Pizzeria.products.Drink;
 import com.pluralsight.Plaza.Pizzeria.products.GarlicKnots;
+import com.pluralsight.Plaza.Pizzeria.products.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.products.Pizza;
 import com.pluralsight.Plaza.Pizzeria.toppings.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
-import java.util.UUID;
+import java.util.*;
 
 public class UserInterface {
 
@@ -54,6 +52,7 @@ public class UserInterface {
                     makeGarlicKnot();
                     break;
                 case "4":
+                    displayOrder();
                     checkOut();
                     break;
                 case "5":
@@ -605,17 +604,29 @@ public class UserInterface {
                 pass = true;
             }
         }
+    }
 
-
-    /*
+    public void displayOrder(){
+        /*
       making all the items that are the same in to one on display
       example drink small 4
+
         HashSet<Product> uniqueProduct = new HashSet<>(cart);
 
         for (Product product : uniqueProduct) {
             System.out.println(product + " " + Collections.frequency(cart, product));
         }
-    */
+
+
+        HashSet<Topping> uniqueProduct = new HashSet<>(allTops);
+
+        for (Topping topping : uniqueProduct) {
+           int count = Collections.frequency( allTops, topping);
+            System.out.println(topping + " " + count);
+        }
+
+         */
+        System.out.println(order);
     }
 
     public void cancelOrder() {

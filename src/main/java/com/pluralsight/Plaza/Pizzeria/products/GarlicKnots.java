@@ -19,4 +19,9 @@ public class GarlicKnots implements IPriceable {
     public double getPrice() {
         return 1.50;
     }
+
+    @Override
+    public String toString() {
+        return "\nGarlicKnots\nflavor: " + flavor;
+    }
 }

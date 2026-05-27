@@ -37,4 +37,9 @@ public class Drink implements IPriceable {
         } else return 0;
 
     }
+
+    @Override
+    public String toString() {
+        return "\nDrink\nsize: " + size + "| flavor: " + flavor;
+    }
 }

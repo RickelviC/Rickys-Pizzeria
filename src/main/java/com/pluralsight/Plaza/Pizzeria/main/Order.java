@@ -47,4 +47,9 @@ public class Order {
         }
         return totalPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Id: " + Id + " | items: " + items;
+    }
 }
