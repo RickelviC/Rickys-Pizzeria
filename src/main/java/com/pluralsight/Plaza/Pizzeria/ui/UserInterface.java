@@ -691,7 +691,7 @@ public class UserInterface {
         String drinkSize = "";
         boolean quit = false;
         while (!quit) {
-            System.out.println(CYAN + BOLD + "===== Drink Sizes ======" + RESET);
+            System.out.println(CYAN + BOLD + "======= Drink Sizes =======" + RESET);
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Small");
             System.out.println(YELLOW + "2) " + RESET + CYAN + "Medium");
             System.out.println(YELLOW + "3) " + RESET + CYAN + "Large");
@@ -762,21 +762,24 @@ public class UserInterface {
                 for (IPriceable uniqueItem : uniqueItems) {
                     total += uniqueItem.getPrice();
                 }
-                System.out.println("-----------------------------");
-                System.out.println("total price: $" + String.format("%.2f", total));
-                System.out.println("-----------------------------");
+
+                System.out.println(CYAN + BOLD + "===========================" + RESET);
+                System.out.println( RED + "total price: $" + String.format("%.2f", total));
+                System.out.println(CYAN + BOLD + "===========================" + RESET);
 
                 System.out.println();
-                System.out.println();
-                System.out.println("do you want to check out?");
-                System.out.println("1) Yes");
-                System.out.println("2) No");
+                System.out.println( CYAN + "Do you Want To Check Out Now ()");
+                System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
+                System.out.println(YELLOW + "2) " + RESET + CYAN + "No");
+                System.out.println(CYAN + BOLD + "===========================" + RESET);
+                System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
+
 
                 String input = scanner.nextLine();
 
                 if (input.equalsIgnoreCase("1")) {
                     checkOut();
-                    System.out.println(" you paid: $" + String.format("%.2f", total));
+                    System.out.println( GREEN + "You Paid: $" + String.format("%.2f", total));
                     pass = true;
                 } else if (input.equalsIgnoreCase("2")) {
                     pass = true;
@@ -784,7 +787,7 @@ public class UserInterface {
                     System.err.println("Invalid Choice. 1-2");
                 }
             } else if (order.getTotalPrice() == 0) {
-                System.out.println("get something first to check out");
+                System.out.println(RED + "Get an Item To check Out" + RESET);
                 pass = true;
             }
         }
