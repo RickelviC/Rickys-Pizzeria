@@ -693,7 +693,7 @@ public class UserInterface {
         order.addItem(knots);
     }
 
-    public void checkOut(){
+    public void checkOut() {
         FileManager fileManager = new FileManager();
         fileManager.saveOrder(order);
 
@@ -739,8 +739,7 @@ public class UserInterface {
                 } else {
                     System.out.println("enter one of the options");
                 }
-            }
-            if (order.getTotalPrice() == 0) {
+            } else if (order.getTotalPrice() == 0) {
                 System.out.println("get something first to check out");
                 pass = true;
             }
@@ -749,8 +748,14 @@ public class UserInterface {
 
     public void cancelOrder() {
 
-        order.getItems().clear();
-        System.out.println("order cleared");
+        if (!order.getItems().isEmpty()) {
+            order.getItems().clear();
+            System.out.println("order cleared");
+        } else {
+            System.out.println("there is nothing to cancel");
+        }
+
+
     }
 
     public boolean isExtra(String option) {
