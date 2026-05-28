@@ -18,7 +18,6 @@ public class UserInterface {
     private int size;
     String crust;
     boolean stuffed;
-    Drink drink;
     List<Topping> allTops = new ArrayList<>();
 
     public UserInterface() {
@@ -649,7 +648,6 @@ public class UserInterface {
         } else {
             System.out.println("more options needed to make the pizza");
         }
-
     }
 
     public void makeDrink() {
@@ -683,7 +681,7 @@ public class UserInterface {
         System.out.println("enter the flavor of your drink: ");
         String flavor = scanner.nextLine();
 
-        drink = new Drink(size, flavor);
+        Drink drink = new Drink(size, flavor);
         order.addItem(drink);
     }
 
