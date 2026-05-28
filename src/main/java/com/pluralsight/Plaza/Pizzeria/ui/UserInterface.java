@@ -13,10 +13,13 @@ import java.util.*;
 
 public class UserInterface {
 
+    private static final String BOLD = "\u001B[1m";
     public static final String RESET = "\u001B[0m";
     public static final String RED = "\u001B[31m";
     public static final String GREEN = "\u001B[32m";
     public static final String CYAN = "\u001B[36m";
+    private static final String YELLOW = "\u001B[33m";
+
 
     private Scanner scanner;
     private Order order;
@@ -38,15 +41,16 @@ public class UserInterface {
 
         boolean quit = false;
         while (!quit) {
-            System.out.println(CYAN + "---------- Menu ----------");
-            System.out.println("1) make your pizza");
-            System.out.println("2) get your drink");
-            System.out.println("3) get Garlic Knot");
-            System.out.println("4) check out");
-            System.out.println("5) cancel order");
-            System.out.println("0) Quit"+ RESET);
+            System.out.println(CYAN + BOLD + "=========== Menu ==========" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Make A Pizza");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Drinks");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Garlic Knots");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "CheckOut");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Cancel Order");
+            System.out.println(RED + "0) " + RESET + CYAN + "Go Back" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -78,16 +82,17 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Pizza Menu ----------");
-            System.out.println("1) Signature Pizza");
-            System.out.println("2) size of pizza");
-            System.out.println("3) type of crust");
-            System.out.println("4) stuffed crust");
-            System.out.println("5) Topping");
-            System.out.println("6) finish pizza and go back");
-            System.out.println("0) go back");
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Signature Pizza");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Size Of Pizza");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Type Of Crust");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "Stuffed Crust");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Topping");
+            System.out.println(YELLOW + "6) " + RESET + CYAN + "Finish Pizza");
+            System.out.println(RED + "0) " + RESET + CYAN + "Go Back" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
 
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -125,9 +130,10 @@ public class UserInterface {
             System.out.println("---------- Signature Menu ----------");
             System.out.println("1) Margherita");
             System.out.println("2) Veggie");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -220,8 +226,10 @@ public class UserInterface {
             System.out.println("3) regular toppings");
             System.out.println("4) sauce topping");
             System.out.println("5) side topping");
-            System.out.println("0) go back");
-            System.out.print("Enter your choice: ");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
+
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -254,6 +262,7 @@ public class UserInterface {
         System.out.println("1) yes");
         System.out.println("2) no");
         System.out.println();
+        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
 
@@ -283,6 +292,7 @@ public class UserInterface {
         System.out.println("3) thick");
         System.out.println("4) cauliflower");
         System.out.println();
+        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
         while (!pass) {
@@ -317,6 +327,7 @@ public class UserInterface {
         System.out.println("1) 8 inch Small $8.50");
         System.out.println("2) 12 inch Medium $12.0");
         System.out.println("3) 16 inch Large $16.50");
+        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
         while (!pass) {
@@ -359,10 +370,11 @@ public class UserInterface {
             System.out.println("4) bacon");
             System.out.println("5) chicken");
             System.out.println("6) meatball");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
             System.out.println();
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -425,10 +437,11 @@ public class UserInterface {
             System.out.println("3) Ricotta");
             System.out.println("4) Goat Cheese");
             System.out.println("5) Buffalo");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
             System.out.println();
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -489,10 +502,11 @@ public class UserInterface {
             System.out.println("7) basil");
             System.out.println("8) pineapple");
             System.out.println("9) anchovies");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
             System.out.println();
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -565,10 +579,11 @@ public class UserInterface {
             System.out.println("4) bbq");
             System.out.println("5) buffalo");
             System.out.println("6) olive oil");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
             System.out.println();
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -622,10 +637,11 @@ public class UserInterface {
             System.out.println();
             System.out.println("1) red pepper");
             System.out.println("2) Parmesan");
-            System.out.println("0) go back");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
             System.out.println();
 
-            System.out.print("Enter your choice: ");
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -664,6 +680,9 @@ public class UserInterface {
         System.out.println("1) Small");
         System.out.println("2) Medium");
         System.out.println("3) Large");
+
+        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+
         boolean pass = false;
         String size = "";
         while (!pass) {
@@ -686,7 +705,7 @@ public class UserInterface {
                 System.out.println("enter one of the options");
             }
         }
-        System.out.println("enter the flavor of your drink: ");
+        System.out.print(YELLOW + "→ Enter The Flavor Of Your Drink: " + RESET);
         String flavor = scanner.nextLine();
 
         Drink drink = new Drink(size, flavor);
@@ -694,7 +713,7 @@ public class UserInterface {
     }
 
     public void makeGarlicKnot() {
-        System.out.println("enter the flavor of your Garlic Knots: ");
+        System.out.print(YELLOW + "→ Enter The Flavor Of Your Garlic Knots: " + RESET);
         String flavor = scanner.nextLine();
 
         GarlicKnots knots = new GarlicKnots(flavor);
@@ -714,8 +733,6 @@ public class UserInterface {
         while (!pass) {
             if (!(order.getTotalPrice() == 0)) {
                 HashSet<IPriceable> uniqueItems = new HashSet<>(order.getItems());
-
-                //Collectors.groupingBy()
 
                 for (IPriceable item : uniqueItems) {
                     System.out.println(item);
