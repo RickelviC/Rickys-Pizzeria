@@ -41,7 +41,7 @@ public class UserInterface {
 
         boolean quit = false;
         while (!quit) {
-            System.out.println(CYAN + BOLD + "=========== Menu ==========" + RESET);
+            System.out.println(CYAN + BOLD + "===== Rickys Pizzeria =====" + RESET);
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Make A Pizza");
             System.out.println(YELLOW + "2) " + RESET + CYAN + "Drinks");
             System.out.println(YELLOW + "3) " + RESET + CYAN + "Garlic Knots");
@@ -50,7 +50,7 @@ public class UserInterface {
             System.out.println(RED + "0) " + RESET + CYAN + "Go Back" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
 
-            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+            System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -73,7 +73,7 @@ public class UserInterface {
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-5 or 0");
             }
         }
     }
@@ -81,7 +81,7 @@ public class UserInterface {
     public void pizzaMenu() {
         boolean quit = false;
         while (!quit) {
-            System.out.println("---------- Pizza Menu ----------");
+            System.out.println(CYAN + BOLD + "======== Pizza Menu =======" + RESET);
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Signature Pizza");
             System.out.println(YELLOW + "2) " + RESET + CYAN + "Size Of Pizza");
             System.out.println(YELLOW + "3) " + RESET + CYAN + "Type Of Crust");
@@ -92,7 +92,7 @@ public class UserInterface {
             System.out.println(CYAN + BOLD + "===========================" + RESET);
 
 
-            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+            System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -119,7 +119,7 @@ public class UserInterface {
                     quit = true;
                     break;
                 default:
-                    System.err.println("Invalid choice. 1-6 or 0 to back");
+                    System.err.println("Invalid Choice. 1-6 or 0");
             }
         }
     }
@@ -127,13 +127,13 @@ public class UserInterface {
     public void signatureMenu() {
         boolean quit = false;
         while (!quit) {
-            System.out.println("---------- Signature Menu ----------");
-            System.out.println("1) Margherita");
-            System.out.println("2) Veggie");
+            System.out.println(CYAN + BOLD + "======== Signature ========" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Margherita");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Veggie");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
 
-            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+            System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -151,7 +151,7 @@ public class UserInterface {
                     quit = true;
                     break;
                 default:
-                    System.err.println("Invalid choice. 1-2 or 0 to back");
+                    System.err.println("Invalid Choice. 1-2 or 0");
             }
         }
     }
@@ -161,27 +161,24 @@ public class UserInterface {
         Topping cheese = new Cheese("Mozzarella", false);
         allTops.add(cheese);
 
-        Topping tomatoes = new Regular("tomatoes");
+        Topping tomatoes = new Regular("Tomatoes");
         allTops.add(tomatoes);
 
-        Topping basil = new Regular("basil");
+        Topping basil = new Regular("Basil");
         allTops.add(basil);
 
-        Topping marinara = new Regular("marinara");
+        Topping marinara = new Regular("Marinara");
         allTops.add(marinara);
 
-        Topping oliveOil = new Regular("olive Oil");
+        Topping oliveOil = new Regular("Olive Oil");
         allTops.add(oliveOil);
 
         size = 12;
-
         stuffed = false;
-
-        crust = "regular";
-
+        crust = "Regular";
         name = "Margherita";
 
-        System.out.println("added Margherita Pizza to the order");
+        System.out.println(GREEN + "✔ Added Margherita Pizza To Order" + RESET);
 
     }
 
@@ -196,7 +193,7 @@ public class UserInterface {
         Topping spinach = new Regular("Spinach");
         allTops.add(spinach);
 
-        Topping marinara = new Regular("marinara");
+        Topping marinara = new Regular("Marinara");
         allTops.add(marinara);
 
         Topping olive = new Regular("Olives");
@@ -206,30 +203,26 @@ public class UserInterface {
         allTops.add(onions);
 
         size = 8;
-
         stuffed = false;
-
-        crust = "regular";
-
+        crust = "Regular";
         name = "Veggie";
 
-
-        System.out.println("added Veggie Pizza to the order");
+        System.out.println(GREEN + "✔ Added Veggie Pizza To Order" + RESET);
     }
 
     public void pizzaToppingMenu() {
         boolean quit = false;
         while (!quit) {
-            System.out.println("---------- Topping Menu ----------");
-            System.out.println("1) meat options");
-            System.out.println("2) cheese options");
-            System.out.println("3) regular toppings");
-            System.out.println("4) sauce topping");
-            System.out.println("5) side topping");
+            System.out.println(CYAN + BOLD + "========= Topping =========" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Meats");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Cheese");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Regular");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "Sauces");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Sides");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
 
-            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+            System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
@@ -252,17 +245,17 @@ public class UserInterface {
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-5 or 0");
             }
         }
     }
 
     public boolean chooseStuffed() {
-        System.out.println("do you want your crust stuffed? (Yes/No)");
-        System.out.println("1) yes");
-        System.out.println("2) no");
-        System.out.println();
-        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+        System.out.println(CYAN + BOLD + "====== Stuffed Crust ======" + RESET);
+        System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
+        System.out.println(YELLOW + "2) " + RESET + CYAN + "No");
+        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
 
         boolean pass = false;
 
@@ -272,26 +265,25 @@ public class UserInterface {
 
             if (input.equalsIgnoreCase("1")) {
                 stuffed = true;
-                System.out.println("you chose stuffed crust");
+                System.out.println(GREEN + "✔ Stuffed Crust" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("2")) {
-                System.out.println("you chose no stuffed crust");
+                System.out.println(GREEN + "✔ No Stuffed Crust" + RESET);
                 pass = true;
             } else {
-                System.err.println("Invalid choice. 1-2");
+                System.err.println("Invalid Choice. 1-2");
             }
         }
         return stuffed;
     }
 
     public String crustType() {
-        System.out.println("what type of crust would you like");
-        System.out.println();
-        System.out.println("1) thin");
-        System.out.println("2) regular");
-        System.out.println("3) thick");
-        System.out.println("4) cauliflower");
-        System.out.println();
+        System.out.println(CYAN + BOLD + "====== Crust type ======" + RESET);
+        System.out.println(YELLOW + "1) " + RESET + CYAN + "Thin");
+        System.out.println(YELLOW + "2) " + RESET + CYAN + "Regular");
+        System.out.println(YELLOW + "3) " + RESET + CYAN + "Thick");
+        System.out.println(YELLOW + "4) " + RESET + CYAN + "Cauliflower");
+        System.out.println(CYAN + BOLD + "===========================" + RESET);
         System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
@@ -299,34 +291,35 @@ public class UserInterface {
             String input = scanner.nextLine();
 
             if (input.equalsIgnoreCase("1")) {
-                crust = "think";
-                System.out.println("you chose a " + crust + " crust");
+                crust = "Think";
+                System.out.println(GREEN + "✔ " + crust + " Crust" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("2")) {
-                crust = "regular";
-                System.out.println("you chose a " + crust + " crust");
+                crust = "Regular";
+                System.out.println(GREEN + "✔ " + crust + " Crust" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("3")) {
-                crust = "thick";
-                System.out.println("you chose a " + crust + " crust");
+                crust = "Thick";
+                System.out.println(GREEN + "✔ " + crust + " Crust" + RESET);
                 pass = true;
 
             } else if (input.equalsIgnoreCase("4")) {
-                crust = "cauliflower";
-                System.out.println("you chose a " + crust + " crust");
+                crust = "Cauliflower";
+                System.out.println(GREEN + "✔ " + crust + " Crust" + RESET);
                 pass = true;
             } else {
-                System.out.println("enter one of the options");
+                System.err.println("Invalid Choice. 1-4");
             }
         }
         return crust;
     }
 
     public int pizzaSize() {
-
-        System.out.println("1) 8 inch Small $8.50");
-        System.out.println("2) 12 inch Medium $12.0");
-        System.out.println("3) 16 inch Large $16.50");
+        System.out.println(CYAN + BOLD + "========== Size ==========" + RESET);
+        System.out.println(YELLOW + "1) " + RESET + CYAN + "8 inch Small $8.50");
+        System.out.println(YELLOW + "2) " + RESET + CYAN + "12 inch Medium $12.00");
+        System.out.println(YELLOW + "3) " + RESET + CYAN + "16 inch Large $16.50");
+        System.out.println(CYAN + BOLD + "===========================" + RESET);
         System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
@@ -335,22 +328,20 @@ public class UserInterface {
 
             if (input.equalsIgnoreCase("1")) {
                 size = 8;
-                System.out.println("you chose a " + size + " inch pizza");
+                System.out.println(GREEN + "✔ " + size + " inch Pizza - Small" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("2")) {
                 size = 12;
-                System.out.println("you chose a " + size + " inch pizza");
+                System.out.println(GREEN + "✔ " + size + " inch Pizza - Medium" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("3")) {
                 size = 16;
-                System.out.println("you chose a " + size + " inch pizza");
+                System.out.println(GREEN + "✔ " + size + " inch Pizza - Large" + RESET);
                 pass = true;
             } else {
-                System.out.println("enter one of the options");
+                System.err.println("Invalid Choice. 1-3");
             }
-
         }
-
         return size;
     }
 
@@ -362,63 +353,67 @@ public class UserInterface {
         boolean extra;
 
         while (!quit) {
-            System.out.println("what type of meat would you like");
-            System.out.println();
-            System.out.println("1) pepperoni");
-            System.out.println("2) sausage");
-            System.out.println("3) ham");
-            System.out.println("4) bacon");
-            System.out.println("5) chicken");
-            System.out.println("6) meatball");
+            System.out.println(CYAN + BOLD + "====== Meat Options =======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Pepperoni");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Sausage");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Ham");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "Bacon");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Chicken");
+            System.out.println(YELLOW + "6) " + RESET + CYAN + "Meatball");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
-            System.out.println();
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1":
-                    meat = "pepperoni";
+                    meat = "Pepperoni";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "2":
-                    meat = "sausage";
+                    meat = "Sausage";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "3":
-                    meat = "ham";
+                    meat = "Ham";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "4":
-                    meat = "bacon";
+                    meat = "Bacon";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "5":
-                    meat = "chicken";
+                    meat = "Chicken";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "6":
-                    meat = "meatball";
+                    meat = "Meatball";
                     extra = isExtra(meat);
                     topping = new Meat(meat, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + meat + " Added" + RESET);
                     break;
                 case "0":
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-6 Or 0");
             }
         }
     }
@@ -430,16 +425,14 @@ public class UserInterface {
         boolean extra;
 
         while (!quit) {
-            System.out.println("what type of cheese would you like");
-            System.out.println();
-            System.out.println("1) Mozzarella");
-            System.out.println("2) Parmesan");
-            System.out.println("3) Ricotta");
-            System.out.println("4) Goat Cheese");
-            System.out.println("5) Buffalo");
+            System.out.println(CYAN + BOLD + "===== Cheese Options ======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Mozzarella");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Parmesan");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Ricotta");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "Goat Cheese");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Buffalo");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
-            System.out.println();
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -450,36 +443,41 @@ public class UserInterface {
                     extra = isExtra(cheese);
                     topping = new Cheese(cheese, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + cheese + " Added" + RESET);
                     break;
                 case "2":
                     cheese = "Parmesan";
                     extra = isExtra(cheese);
                     topping = new Cheese(cheese, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + cheese + " Added" + RESET);
                     break;
                 case "3":
                     cheese = "Ricotta";
                     extra = isExtra(cheese);
                     topping = new Cheese(cheese, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + cheese + " Added" + RESET);
                     break;
                 case "4":
                     cheese = "Goat Cheese";
                     extra = isExtra(cheese);
                     topping = new Cheese(cheese, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + cheese + " Added" + RESET);
                     break;
                 case "5":
                     cheese = "Buffalo";
                     extra = isExtra(cheese);
                     topping = new Cheese(cheese, extra);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + cheese + " Added" + RESET);
                     break;
                 case "0":
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-5 Or 0");
             }
         }
     }
@@ -491,20 +489,18 @@ public class UserInterface {
         String regular;
 
         while (!quit) {
-            System.out.println("what type of Regular Toppings would you like");
-            System.out.println();
-            System.out.println("1) onions");
-            System.out.println("2) mushrooms");
-            System.out.println("3) bell peppers");
-            System.out.println("4) olives");
-            System.out.println("5) tomatoes");
-            System.out.println("6) spinach");
-            System.out.println("7) basil");
-            System.out.println("8) pineapple");
-            System.out.println("9) anchovies");
+            System.out.println(CYAN + BOLD + "===== Regular Options ======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Onions");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Mushrooms");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Bell Peppers");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "Olives");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Tomatoes");
+            System.out.println(YELLOW + "6) " + RESET + CYAN + "Spinach");
+            System.out.println(YELLOW + "7) " + RESET + CYAN + "Basil");
+            System.out.println(YELLOW + "8) " + RESET + CYAN + "Pineapple");
+            System.out.println(YELLOW + "9) " + RESET + CYAN + "Anchovies");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
-            System.out.println();
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -514,52 +510,61 @@ public class UserInterface {
                     regular = "onions";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "2":
                     regular = "mushrooms";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "3":
                     regular = "bell peppers";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "4":
                     regular = "olives";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "5":
                     regular = "tomatoes";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "6":
                     regular = "spinach";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "7":
                     regular = "basil";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "8":
                     regular = "pineapple";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "9":
                     regular = "anchovies";
                     topping = new Regular(regular);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + regular + " Added" + RESET);
                     break;
                 case "0":
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-9 Or 0");
             }
         }
     }
@@ -571,57 +576,61 @@ public class UserInterface {
         String sauce;
 
         while (!quit) {
-            System.out.println("what type of Sauce would you like");
-            System.out.println();
-            System.out.println("1) marinara");
-            System.out.println("2) Alfredo");
-            System.out.println("3) pesto");
-            System.out.println("4) bbq");
-            System.out.println("5) buffalo");
-            System.out.println("6) olive oil");
+            System.out.println(CYAN + BOLD + "===== Sauce Options ======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Marinara");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Alfredo");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Pesto");
+            System.out.println(YELLOW + "4) " + RESET + CYAN + "BBQ");
+            System.out.println(YELLOW + "5) " + RESET + CYAN + "Buffalo");
+            System.out.println(YELLOW + "6) " + RESET + CYAN + "Olive Oil");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
-            System.out.println();
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1":
-                    sauce = "marinara";
+                    sauce = "Marinara";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "2":
                     sauce = "Alfredo";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "3":
-                    sauce = "pesto";
+                    sauce = "Pesto";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "4":
-                    sauce = "bbq";
+                    sauce = "BBQ";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "5":
-                    sauce = "buffalo";
+                    sauce = "Buffalo";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "6":
-                    sauce = "olive oil";
+                    sauce = "Olive oil";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + sauce + " Added" + RESET);
                     break;
                 case "0":
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-6 Or 0");
             }
         }
     }
@@ -633,33 +642,33 @@ public class UserInterface {
         String side;
 
         while (!quit) {
-            System.out.println("what type of sides would you like");
-            System.out.println();
-            System.out.println("1) red pepper");
-            System.out.println("2) Parmesan");
+            System.out.println(CYAN + BOLD + "===== sides Options ======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Red Pepper");
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Parmesan");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
             System.out.println(CYAN + BOLD + "===========================" + RESET);
-            System.out.println();
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
 
             switch (choice) {
                 case "1":
-                    side = "red pepper";
+                    side = "Red Pepper";
                     topping = new Side(side);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + side + " Added" + RESET);
                     break;
                 case "2":
                     side = "Parmesan";
                     topping = new Side(side);
                     allTops.add(topping);
+                    System.out.println(GREEN + "✔ " + side + " Added" + RESET);
                     break;
                 case "0":
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid Choice. 1-2 Or 0");
             }
         }
     }
@@ -670,45 +679,53 @@ public class UserInterface {
             Pizza pizza = new Pizza(allTops, size, stuffed, crust, name);
             order.addItem(pizza);
         } else {
-            System.out.println("more options needed to make the pizza");
+            System.err.println("Choose a Size to Make The Pizza");
         }
     }
 
     public void makeDrink() {
 
-        System.out.println("======= Drink sizes ======");
-        System.out.println("1) Small");
-        System.out.println("2) Medium");
-        System.out.println("3) Large");
-
-        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
-
-        boolean pass = false;
-        String size = "";
-        while (!pass) {
-
-            String input = scanner.nextLine();
-
-            if (input.equalsIgnoreCase("1")) {
-                size = "small";
-                System.out.println("you chose a " + size + " Drink");
-                pass = true;
-            } else if (input.equalsIgnoreCase("2")) {
-                size = "medium";
-                System.out.println("you chose a " + size + " Drink");
-                pass = true;
-            } else if (input.equalsIgnoreCase("3")) {
-                size = "large";
-                System.out.println("you chose a " + size + " Drink");
-                pass = true;
-            } else {
-                System.out.println("enter one of the options");
-            }
-        }
         System.out.print(YELLOW + "→ Enter The Flavor Of Your Drink: " + RESET);
         String flavor = scanner.nextLine();
 
-        Drink drink = new Drink(size, flavor);
+        String drinkSize = "";
+        boolean quit = false;
+        while (!quit) {
+            System.out.println(CYAN + BOLD + "===== Drink Sizes ======" + RESET);
+            System.out.println(YELLOW + "1) " + RESET + CYAN + "Small");
+            System.out.println(YELLOW + "2) " + RESET + CYAN + "Medium");
+            System.out.println(YELLOW + "3) " + RESET + CYAN + "Large");
+            System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
+            System.out.println(CYAN + BOLD + "===========================" + RESET);
+
+            System.out.print(YELLOW + "→ Enter your choice: " + RESET);
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    drinkSize = "Small";
+                    System.out.println(GREEN + "✔ " + drinkSize + " " + flavor + " Drink Added" + RESET);
+                    quit = true;
+                    break;
+                case "2":
+                    drinkSize = "Medium";
+                    System.out.println(GREEN + "✔ " + drinkSize + " " + flavor + " Drink Added" + RESET);
+                    quit = true;
+                    break;
+                case "3":
+                    drinkSize = "Large";
+                    System.out.println(GREEN + "✔ " + drinkSize + " " + flavor + " Drink Added" + RESET);
+                    quit = true;
+                    break;
+                case "0":
+                    quit = true;
+                    break;
+                default:
+                    System.err.println("Invalid Choice. 1-3 Or 0");
+            }
+        }
+
+        Drink drink = new Drink(drinkSize, flavor);
         order.addItem(drink);
     }
 
@@ -718,6 +735,8 @@ public class UserInterface {
 
         GarlicKnots knots = new GarlicKnots(flavor);
         order.addItem(knots);
+
+        System.out.println(GREEN + "✔ " + flavor + " Garlic Knots Added" + RESET);
     }
 
     public void checkOut() {
@@ -762,7 +781,7 @@ public class UserInterface {
                 } else if (input.equalsIgnoreCase("2")) {
                     pass = true;
                 } else {
-                    System.out.println("enter one of the options");
+                    System.err.println("Invalid Choice. 1-2");
                 }
             } else if (order.getTotalPrice() == 0) {
                 System.out.println("get something first to check out");
@@ -775,9 +794,9 @@ public class UserInterface {
 
         if (!order.getItems().isEmpty()) {
             order.getItems().clear();
-            System.out.println("order cleared");
+            System.out.println(GREEN + "✔ Order Cleared" + RESET);
         } else {
-            System.out.println("there is nothing to cancel");
+            System.out.println(RED + "No Order To Cancel" + RESET);
         }
 
 
@@ -785,10 +804,11 @@ public class UserInterface {
 
     public boolean isExtra(String option) {
         boolean isExtra = false;
-        System.out.println("do you want extra " + option + "?(Yes/No): ");
-        System.out.println("1) Yes");
-        System.out.println("2) NO");
-        System.out.println();
+        System.out.println(CYAN + BOLD + "do you want extra " + option + "?(Yes/No): " + RESET);
+        System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
+        System.out.println(YELLOW + "1) " + RESET + CYAN + "No");
+        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
         while (!pass) {
@@ -796,13 +816,13 @@ public class UserInterface {
 
             if (input.equalsIgnoreCase("1")) {
                 isExtra = true;
-                System.out.println("you chose to get extra " + option + " on your pizza");
+                System.out.println(GREEN + "✔ Extra " + option + " Added" + RESET);
                 pass = true;
             } else if (input.equalsIgnoreCase("2")) {
-                System.out.println("you chose to get extra " + option + " on your pizza");
+                System.out.println(RED + "✘ Extra " + option + " Was Not Added" + RESET);
                 pass = true;
             } else {
-                System.out.println("enter one of the options");
+                System.err.println("Invalid Choice. 1-2");
             }
         }
         return isExtra;
