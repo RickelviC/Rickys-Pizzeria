@@ -25,8 +25,8 @@ public class FileManager {
             writer.println("----------- RECEIPT -----------");
             writer.println("order ID: " + order.getId());
             writer.println("-----------------------------");
-            for (IPriceable item : order.getItems()) {
-                writer.println(item + " - $" + String.format("%.2f", item.getPrice()));
+           for (IPriceable item : order.getItems()) {
+                writer.println(item );
             }
             writer.println("-----------------------------");
             writer.println("total: $" + String.format("%.2f", order.getTotalPrice()));
