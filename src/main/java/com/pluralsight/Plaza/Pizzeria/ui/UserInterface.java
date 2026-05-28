@@ -74,11 +74,12 @@ public class UserInterface {
         boolean quit = false;
         while (!quit) {
             System.out.println("---------- Pizza Menu ----------");
-            System.out.println("1) size of pizza");
-            System.out.println("2) type of crust");
-            System.out.println("3) stuffed crust");
-            System.out.println("4) Topping");
-            System.out.println("5) finish pizza and go back");
+            System.out.println("1) Signature Pizza");
+            System.out.println("2) size of pizza");
+            System.out.println("3) type of crust");
+            System.out.println("4) stuffed crust");
+            System.out.println("5) Topping");
+            System.out.println("6) finish pizza and go back");
             System.out.println("0) go back");
 
 
@@ -87,18 +88,21 @@ public class UserInterface {
 
             switch (choice) {
                 case "1":
-                    size = pizzaSize();
+                    signatureMenu();
                     break;
                 case "2":
-                    crust = crustType();
+                    size = pizzaSize();
                     break;
                 case "3":
-                    stuffed = stuffed();
+                    crust = crustType();
                     break;
                 case "4":
-                    pizzaToppingMenu();
+                    stuffed = stuffed();
                     break;
                 case "5":
+                    pizzaToppingMenu();
+                    break;
+                case "6":
                     finishPizza();
                     break;
                 case "0":
@@ -111,8 +115,36 @@ public class UserInterface {
         }
     }
 
-/*
-    public void signaturePizzas() {
+    public void signatureMenu() {
+        boolean quit = false;
+        while (!quit) {
+            System.out.println("---------- Signature Menu ----------");
+            System.out.println("1) Margherita");
+            System.out.println("2) Veggie");
+            System.out.println("0) go back");
+
+            System.out.print("Enter your choice: ");
+            String choice = scanner.nextLine();
+
+            switch (choice) {
+                case "1":
+                    makeMargherita();
+                    break;
+                case "2":
+                    makeVeggie();
+                    break;
+                case "0":
+                    finishPizza();
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+
+    public void makeMargherita() {
 
         List<Topping> toppings = new ArrayList<>();
 
@@ -133,8 +165,40 @@ public class UserInterface {
 
         Pizza margherita = new Pizza(toppings, 12, false, "regular");
 
+        order.addItem(margherita);
+
+        System.out.println("added Margherita Pizza to the order");
+
     }
-*/
+
+    public void makeVeggie() {
+
+        List<Topping> toppings = new ArrayList<>();
+
+        Topping cheese = new Cheese("Mozzarella", false);
+        toppings.add(cheese);
+
+        Topping bellPeppers = new Regular("Bell Peppers");
+        toppings.add(bellPeppers);
+
+        Topping spinach = new Regular("Spinach");
+        toppings.add(spinach);
+
+        Topping marinara = new Regular("marinara");
+        toppings.add(marinara);
+
+        Topping olive = new Regular("Olives");
+        toppings.add(olive);
+
+        Topping onions = new Regular("Onions");
+        toppings.add(onions);
+
+        Pizza veggie = new Pizza(toppings, 8, false, "regular");
+
+        order.addItem(veggie);
+
+        System.out.println("added Veggie Pizza to the order");
+    }
 
     public void pizzaToppingMenu() {
         boolean quit = false;
@@ -577,10 +641,10 @@ public class UserInterface {
 
     public void finishPizza() {
 
-        if (size != 0){
+        if (size != 0) {
             Pizza pizza = new Pizza(allTops, size, stuffed, crust);
             order.addItem(pizza);
-        }else {
+        } else {
             System.out.println("more options needed to make the pizza");
         }
 
@@ -686,5 +750,4 @@ public class UserInterface {
         }
         return isExtra;
     }
-
 }
