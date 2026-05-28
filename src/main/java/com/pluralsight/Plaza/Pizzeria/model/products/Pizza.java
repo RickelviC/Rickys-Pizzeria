@@ -12,8 +12,8 @@ public class Pizza implements IPriceable {
     private boolean stuffed;
     private String crustType;
 
-    public Pizza(List<Topping> toppings, int size, boolean stuffed, String crustType) {
-        this.name = "custom";
+    public Pizza(List<Topping> toppings, int size, boolean stuffed, String crustType,String name) {
+        this.name = name;
         this.toppings = toppings;
         this.size = size;
         this.stuffed = stuffed;

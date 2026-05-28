@@ -18,6 +18,7 @@ public class UserInterface {
     private int size;
     String crust;
     boolean stuffed;
+    String name = "custom";
     List<Topping> allTops = new ArrayList<>();
 
     public UserInterface() {
@@ -108,7 +109,7 @@ public class UserInterface {
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid choice. 1-6 or 0 to back");
             }
         }
     }
@@ -127,44 +128,47 @@ public class UserInterface {
             switch (choice) {
                 case "1":
                     makeMargherita();
+                    pizzaToppingMenu();
+                    quit = true;
                     break;
                 case "2":
                     makeVeggie();
+                    pizzaToppingMenu();
+                    quit = true;
                     break;
                 case "0":
-                    finishPizza();
                     quit = true;
                     break;
                 default:
-                    System.out.println("Invalid choice. Please try again.");
+                    System.err.println("Invalid choice. 1-2 or 0 to back");
             }
         }
     }
 
     public void makeMargherita() {
 
-        List<Topping> toppings = new ArrayList<>();
-
         Topping cheese = new Cheese("Mozzarella", false);
-        toppings.add(cheese);
+        allTops.add(cheese);
 
         Topping tomatoes = new Regular("tomatoes");
-        toppings.add(tomatoes);
+        allTops.add(tomatoes);
 
         Topping basil = new Regular("basil");
-        toppings.add(basil);
+        allTops.add(basil);
 
         Topping marinara = new Regular("marinara");
-        toppings.add(marinara);
+        allTops.add(marinara);
 
         Topping oliveOil = new Regular("olive Oil");
-        toppings.add(oliveOil);
+        allTops.add(oliveOil);
 
-        Pizza margherita = new Pizza(toppings, 12, false, "regular");
+        size = 12;
 
-        margherita.setName("margherita");
+        stuffed = false;
 
-        order.addItem(margherita);
+        crust = "regular";
+
+        name = "Margherita";
 
         System.out.println("added Margherita Pizza to the order");
 
@@ -172,31 +176,32 @@ public class UserInterface {
 
     public void makeVeggie() {
 
-        List<Topping> toppings = new ArrayList<>();
-
         Topping cheese = new Cheese("Mozzarella", false);
-        toppings.add(cheese);
+        allTops.add(cheese);
 
         Topping bellPeppers = new Regular("Bell Peppers");
-        toppings.add(bellPeppers);
+        allTops.add(bellPeppers);
 
         Topping spinach = new Regular("Spinach");
-        toppings.add(spinach);
+        allTops.add(spinach);
 
         Topping marinara = new Regular("marinara");
-        toppings.add(marinara);
+        allTops.add(marinara);
 
         Topping olive = new Regular("Olives");
-        toppings.add(olive);
+        allTops.add(olive);
 
         Topping onions = new Regular("Onions");
-        toppings.add(onions);
+        allTops.add(onions);
 
-        Pizza veggie = new Pizza(toppings, 8, false, "regular");
+        size = 8;
 
-        veggie.setName("veggie");
+        stuffed = false;
 
-        order.addItem(veggie);
+        crust = "regular";
+
+        name = "Veggie";
+
 
         System.out.println("added Veggie Pizza to the order");
     }
@@ -211,7 +216,6 @@ public class UserInterface {
             System.out.println("4) sauce topping");
             System.out.println("5) side topping");
             System.out.println("0) go back");
-
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
 
@@ -260,7 +264,7 @@ public class UserInterface {
                 System.out.println("you chose no stuffed crust");
                 pass = true;
             } else {
-                System.out.println("enter one of the options");
+                System.err.println("Invalid choice. 1-2");
             }
         }
         return stuffed;
@@ -643,7 +647,7 @@ public class UserInterface {
     public void finishPizza() {
 
         if (size != 0) {
-            Pizza pizza = new Pizza(allTops, size, stuffed, crust);
+            Pizza pizza = new Pizza(allTops, size, stuffed, crust, name);
             order.addItem(pizza);
         } else {
             System.out.println("more options needed to make the pizza");
