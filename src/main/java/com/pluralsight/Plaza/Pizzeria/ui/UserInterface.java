@@ -56,7 +56,6 @@ public class UserInterface {
                     break;
                 case "4":
                     displayOrder();
-                    checkOut();
                     break;
                 case "5":
                     cancelOrder();
@@ -696,39 +695,58 @@ public class UserInterface {
         order.addItem(knots);
     }
 
-    public void checkOut() {
+    public void checkOut(){
+        FileManager fileManager = new FileManager();
+        fileManager.saveOrder(order);
+
+        cancelOrder();
+    }
+
+    public void displayOrder() {
+
         boolean pass = false;
         while (!pass) {
             if (!(order.getTotalPrice() == 0)) {
-                FileManager fileManager = new FileManager();
-                fileManager.saveOrder(order);
-                pass = true;
+                HashSet<IPriceable> uniqueItems = new HashSet<>(order.getItems());
+
+                //Collectors.groupingBy()
+
+                for (IPriceable item : uniqueItems) {
+                    System.out.println(item);
+                }
+
+                double total = 0.0;
+
+                for (IPriceable uniqueItem : uniqueItems) {
+                    total += uniqueItem.getPrice();
+                }
+                System.out.println("-----------------------------");
+                System.out.println("total price: $" + String.format("%.2f", total));
+                System.out.println("-----------------------------");
+
+                System.out.println();
+                System.out.println();
+                System.out.println("do you want to check out?");
+                System.out.println("1) Yes");
+                System.out.println("2) No");
+
+                String input = scanner.nextLine();
+
+                if (input.equalsIgnoreCase("1")) {
+                    checkOut();
+                    System.out.println(" you paid: $" + String.format("%.2f", total));
+                    pass = true;
+                } else if (input.equalsIgnoreCase("2")) {
+                    pass = true;
+                } else {
+                    System.out.println("enter one of the options");
+                }
             }
             if (order.getTotalPrice() == 0) {
                 System.out.println("get something first to check out");
                 pass = true;
             }
         }
-    }
-
-    public void displayOrder() {
-
-        HashSet<IPriceable> uniqueItems = new HashSet<>(order.getItems());
-
-        //Collectors.groupingBy()
-
-        for (IPriceable item : uniqueItems) {
-            System.out.println(item);
-        }
-
-        double total = 0.0;
-
-        for (IPriceable uniqueItem : uniqueItems) {
-            total += uniqueItem.getPrice();
-        }
-        System.out.println("-----------------------------");
-        System.out.println("total price: $" + String.format("%.2f", total));
-        System.out.println("-----------------------------");
     }
 
     public void cancelOrder() {
