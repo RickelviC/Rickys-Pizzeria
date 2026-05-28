@@ -94,10 +94,10 @@ public class Pizza implements IPriceable {
     public String toString() {
         StringBuilder builder = new StringBuilder();
         builder.append("---- " + name + " Pizza ----\n");
-        builder.append(String.format(" size     : %d\n", size));
+        builder.append(String.format("size      : %d\n", size));
         builder.append(String.format("crust type: %s\n", crustType));
         builder.append(String.format("stuffed   : %s\n", stuffed ? "Yes" : "No"));
-        builder.append("  toppings   :\n");
+        builder.append("toppings   :\n");
 
         if (toppings.isEmpty()) {
             builder.append(" - none\n");

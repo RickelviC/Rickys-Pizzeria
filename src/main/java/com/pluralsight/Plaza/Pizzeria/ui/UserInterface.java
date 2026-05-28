@@ -13,13 +13,18 @@ import java.util.*;
 
 public class UserInterface {
 
+    public static final String RESET = "\u001B[0m";
+    public static final String RED = "\u001B[31m";
+    public static final String GREEN = "\u001B[32m";
+    public static final String CYAN = "\u001B[36m";
+
     private Scanner scanner;
     private Order order;
     private int size;
-    String crust;
-    boolean stuffed;
-    String name = "custom";
-    List<Topping> allTops = new ArrayList<>();
+    private String crust;
+    private boolean stuffed;
+    private String name = "custom";
+    private List<Topping> allTops = new ArrayList<>();
 
     public UserInterface() {
         //UUID is a 36-character string made up of 5 groups of hexadecimal digits separated by hyphens
@@ -33,13 +38,13 @@ public class UserInterface {
 
         boolean quit = false;
         while (!quit) {
-            System.out.println("---------- Menu ----------");
+            System.out.println(CYAN + "---------- Menu ----------");
             System.out.println("1) make your pizza");
             System.out.println("2) get your drink");
             System.out.println("3) get Garlic Knot");
             System.out.println("4) check out");
             System.out.println("5) cancel order");
-            System.out.println("0) Quit");
+            System.out.println("0) Quit"+ RESET);
 
             System.out.print("Enter your choice: ");
             String choice = scanner.nextLine();
@@ -96,7 +101,7 @@ public class UserInterface {
                     crust = crustType();
                     break;
                 case "4":
-                    stuffed = stuffed();
+                    stuffed = chooseStuffed();
                     break;
                 case "5":
                     pizzaToppingMenu();
@@ -244,7 +249,7 @@ public class UserInterface {
         }
     }
 
-    public boolean stuffed() {
+    public boolean chooseStuffed() {
         System.out.println("do you want your crust stuffed? (Yes/No)");
         System.out.println("1) yes");
         System.out.println("2) no");
@@ -404,7 +409,6 @@ public class UserInterface {
                     System.out.println("Invalid choice. Please try again.");
             }
         }
-
     }
 
     public void cheeseTopping() {
@@ -574,7 +578,7 @@ public class UserInterface {
                     allTops.add(topping);
                     break;
                 case "2":
-                    sauce = "alfredo";
+                    sauce = "Alfredo";
                     topping = new Sauce(sauce);
                     allTops.add(topping);
                     break;
@@ -631,7 +635,7 @@ public class UserInterface {
                     allTops.add(topping);
                     break;
                 case "2":
-                    side = "parmesan";
+                    side = "Parmesan";
                     topping = new Side(side);
                     allTops.add(topping);
                     break;
