@@ -28,6 +28,8 @@ public class GarlicKnots implements IPriceable {
 
         builder.append("---- Garlic Knots ----\n");
         builder.append("flavor  : " + flavor + "\n");
+        builder.append("---- Garlic Knots Price ----\n");
+        builder.append("price: $" + String.format("%.2f", getPrice()) + "\n");
 
         return builder.toString();
     }

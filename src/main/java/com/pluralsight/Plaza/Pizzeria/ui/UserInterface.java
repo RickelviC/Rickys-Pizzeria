@@ -104,9 +104,9 @@ public class UserInterface {
                     break;
                 case "6":
                     finishPizza();
+                    quit = true;
                     break;
                 case "0":
-                    finishPizza();
                     quit = true;
                     break;
                 default:
@@ -143,7 +143,6 @@ public class UserInterface {
         }
     }
 
-
     public void makeMargherita() {
 
         List<Topping> toppings = new ArrayList<>();
@@ -164,6 +163,8 @@ public class UserInterface {
         toppings.add(oliveOil);
 
         Pizza margherita = new Pizza(toppings, 12, false, "regular");
+
+        margherita.setName("margherita");
 
         order.addItem(margherita);
 
@@ -194,6 +195,8 @@ public class UserInterface {
         toppings.add(onions);
 
         Pizza veggie = new Pizza(toppings, 8, false, "regular");
+
+        veggie.setName("veggie");
 
         order.addItem(veggie);
 
@@ -718,6 +721,14 @@ public class UserInterface {
             System.out.println(item);
         }
 
+        double total = 0.0;
+
+        for (IPriceable uniqueItem : uniqueItems) {
+            total += uniqueItem.getPrice();
+        }
+        System.out.println("-----------------------------");
+        System.out.println("total price: $" + String.format("%.2f", total));
+        System.out.println("-----------------------------");
     }
 
     public void cancelOrder() {

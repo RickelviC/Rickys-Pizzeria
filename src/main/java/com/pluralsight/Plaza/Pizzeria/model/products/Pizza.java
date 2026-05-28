@@ -3,16 +3,17 @@ package com.pluralsight.Plaza.Pizzeria.model.products;
 import com.pluralsight.Plaza.Pizzeria.interfaces.IPriceable;
 import com.pluralsight.Plaza.Pizzeria.model.toppings.Topping;
 
-import java.util.Collections;
 import java.util.List;
 
 public class Pizza implements IPriceable {
+    private String name;
     private List<Topping> toppings;
     private int size;
     private boolean stuffed;
     private String crustType;
 
     public Pizza(List<Topping> toppings, int size, boolean stuffed, String crustType) {
+        this.name = "custom";
         this.toppings = toppings;
         this.size = size;
         this.stuffed = stuffed;
@@ -51,7 +52,15 @@ public class Pizza implements IPriceable {
         this.crustType = crustType;
     }
 
-    public void AddTopping(Topping topping){
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void AddTopping(Topping topping) {
         toppings.add(topping);
     }
 
@@ -84,7 +93,7 @@ public class Pizza implements IPriceable {
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
-        builder.append("---- Pizza ----\n");
+        builder.append("---- " + name + " Pizza ----\n");
         builder.append(String.format(" size     : %d\n", size));
         builder.append(String.format("crust type: %s\n", crustType));
         builder.append(String.format("stuffed   : %s\n", stuffed ? "Yes" : "No"));
@@ -97,6 +106,10 @@ public class Pizza implements IPriceable {
                 builder.append(" - ").append(topping).append("\n");
             }
         }
+
+        builder.append("---- Pizza Price ----\n");
+        builder.append("price: $" + String.format("%.2f", getPrice()) + "\n");
+
         return builder.toString();
     }
 }

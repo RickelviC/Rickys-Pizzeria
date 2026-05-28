@@ -44,10 +44,12 @@ public class Drink implements IPriceable {
     public String toString() {
 
         StringBuilder builder = new StringBuilder();
-
+        //builder.append("---- Drink "+ flavor +"----\n");
         builder.append("---- Drink ----\n");
         builder.append("size    : " + size + "\n");
         builder.append("flavor  : " + flavor + "\n");
+        builder.append("---- Drink Price ----\n");
+        builder.append("price: $" + String.format("%.2f", getPrice()) + "\n");
 
         return builder.toString();
     }
