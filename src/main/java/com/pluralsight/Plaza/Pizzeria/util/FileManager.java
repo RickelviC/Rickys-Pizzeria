@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 public class FileManager {
 
     public void saveOrder(Order order) {
-        File folder = new File("src/main/java/com/pluralsight/Plaza/Pizzeria/util/receipts");
+        File folder = new File("src/main/java/com/pluralsight/Plaza/receipts");
         if (!folder.exists()) {
             folder.mkdirs();
         }
