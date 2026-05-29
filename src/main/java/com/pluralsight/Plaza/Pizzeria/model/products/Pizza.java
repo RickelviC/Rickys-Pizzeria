@@ -64,6 +64,11 @@ public class Pizza implements IPriceable {
         toppings.add(topping);
     }
 
+    /*
+     * over the getPrice() method from IPriceable to do
+     * the match behind the size of the pizza and all the toppings chosen
+     */
+
     @Override
     public double getPrice() {
         if (size == 8) {

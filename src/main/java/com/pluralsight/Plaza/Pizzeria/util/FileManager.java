@@ -11,6 +11,12 @@ import java.time.format.DateTimeFormatter;
 
 public class FileManager {
 
+    /*
+     * used by the checkOut() in UserInterface class to save
+     * the order to a new receipt, also makes sure that
+     * the dir is made before saving the new file
+     */
+
     public void saveOrder(Order order) {
         File folder = new File("src/main/java/com/pluralsight/Plaza/receipts");
         if (!folder.exists()) {

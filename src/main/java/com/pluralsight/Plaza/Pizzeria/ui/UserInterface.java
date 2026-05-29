@@ -810,7 +810,8 @@ public class UserInterface {
 
     /*
      * called by displayOrder() after the user confirms they want to
-     * check out to clear the order list and make the user pay the bill
+     * check out to clear the order list and make the user pay the bill, also
+     * calls the FileManager class to save the order to a receipt
      */
     public void checkOut() {
         FileManager fileManager = new FileManager();
@@ -820,7 +821,8 @@ public class UserInterface {
     }
 
     /*
-     * called by PizzaMenu() to display all items in order and asked user to check out
+     * called by PizzaMenu() to display all items in order and asked user to check out,
+     * also calls checkOut() method but only runs if the order list is not empty
      */
     public void displayOrder() {
 
@@ -870,7 +872,8 @@ public class UserInterface {
     }
 
     /*
-     * called by PizzaMenu() to remove all the items in order and restart from the start
+     * called by PizzaMenu() to remove all the items in order and restart from the start,
+     * if the order list is empty does not run the clear order
      */
     public void cancelOrder() {
 
