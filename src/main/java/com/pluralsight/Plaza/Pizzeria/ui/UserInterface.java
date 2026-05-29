@@ -48,7 +48,7 @@ public class UserInterface {
             System.out.println(YELLOW + "4) " + RESET + CYAN + "CheckOut");
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Cancel Order");
             System.out.println(RED + "0) " + RESET + CYAN + "Go Back" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
@@ -89,7 +89,7 @@ public class UserInterface {
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Topping");
             System.out.println(YELLOW + "6) " + RESET + CYAN + "Finish Pizza");
             System.out.println(RED + "0) " + RESET + CYAN + "Go Back" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
 
             System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
@@ -131,7 +131,7 @@ public class UserInterface {
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Margherita");
             System.out.println(YELLOW + "2) " + RESET + CYAN + "Veggie");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
@@ -220,7 +220,7 @@ public class UserInterface {
             System.out.println(YELLOW + "4) " + RESET + CYAN + "Sauces");
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Sides");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
             String choice = scanner.nextLine();
@@ -254,7 +254,7 @@ public class UserInterface {
         System.out.println(CYAN + BOLD + "====== Stuffed Crust ======" + RESET);
         System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
         System.out.println(YELLOW + "2) " + RESET + CYAN + "No");
-        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.println(CYAN + BOLD + "=====================================" + RESET);
         System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
 
         boolean pass = false;
@@ -283,7 +283,7 @@ public class UserInterface {
         System.out.println(YELLOW + "2) " + RESET + CYAN + "Regular");
         System.out.println(YELLOW + "3) " + RESET + CYAN + "Thick");
         System.out.println(YELLOW + "4) " + RESET + CYAN + "Cauliflower");
-        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.println(CYAN + BOLD + "=====================================" + RESET);
         System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
@@ -319,7 +319,7 @@ public class UserInterface {
         System.out.println(YELLOW + "1) " + RESET + CYAN + "8 inch Small $8.50");
         System.out.println(YELLOW + "2) " + RESET + CYAN + "12 inch Medium $12.00");
         System.out.println(YELLOW + "3) " + RESET + CYAN + "16 inch Large $16.50");
-        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.println(CYAN + BOLD + "=====================================" + RESET);
         System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;
@@ -361,7 +361,7 @@ public class UserInterface {
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Chicken");
             System.out.println(YELLOW + "6) " + RESET + CYAN + "Meatball");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -432,7 +432,7 @@ public class UserInterface {
             System.out.println(YELLOW + "4) " + RESET + CYAN + "Goat Cheese");
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Buffalo");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -500,7 +500,7 @@ public class UserInterface {
             System.out.println(YELLOW + "8) " + RESET + CYAN + "Pineapple");
             System.out.println(YELLOW + "9) " + RESET + CYAN + "Anchovies");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -584,7 +584,7 @@ public class UserInterface {
             System.out.println(YELLOW + "5) " + RESET + CYAN + "Buffalo");
             System.out.println(YELLOW + "6) " + RESET + CYAN + "Olive Oil");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -646,7 +646,7 @@ public class UserInterface {
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Red Pepper");
             System.out.println(YELLOW + "1) " + RESET + CYAN + "Parmesan");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -696,7 +696,7 @@ public class UserInterface {
             System.out.println(YELLOW + "2) " + RESET + CYAN + "Medium");
             System.out.println(YELLOW + "3) " + RESET + CYAN + "Large");
             System.out.println(RED + "0) " + RESET + CYAN + "Quit" + RESET);
-            System.out.println(CYAN + BOLD + "===========================" + RESET);
+            System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
             System.out.print(YELLOW + "→ Enter your choice: " + RESET);
             String choice = scanner.nextLine();
@@ -763,15 +763,15 @@ public class UserInterface {
                     total += uniqueItem.getPrice();
                 }
 
-                System.out.println(CYAN + BOLD + "===========================" + RESET);
+                System.out.println(CYAN + BOLD + "=====================================" + RESET);
                 System.out.println( RED + "total price: $" + String.format("%.2f", total));
-                System.out.println(CYAN + BOLD + "===========================" + RESET);
+                System.out.println(CYAN + BOLD + "=====================================" + RESET);
 
                 System.out.println();
                 System.out.println( CYAN + "Do you Want To Check Out Now ()");
                 System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
                 System.out.println(YELLOW + "2) " + RESET + CYAN + "No");
-                System.out.println(CYAN + BOLD + "===========================" + RESET);
+                System.out.println(CYAN + BOLD + "=====================================" + RESET);
                 System.out.print(YELLOW + "→ Enter your Choice: " + RESET);
 
 
@@ -810,7 +810,7 @@ public class UserInterface {
         System.out.println(CYAN + BOLD + "do you want extra " + option + "?(Yes/No): " + RESET);
         System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
         System.out.println(YELLOW + "1) " + RESET + CYAN + "No");
-        System.out.println(CYAN + BOLD + "===========================" + RESET);
+        System.out.println(CYAN + BOLD + "=====================================" + RESET);
         System.out.print(YELLOW + "→ Enter your choice: " + RESET);
 
         boolean pass = false;

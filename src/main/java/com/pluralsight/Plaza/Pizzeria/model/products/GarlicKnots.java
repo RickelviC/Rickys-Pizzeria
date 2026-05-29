@@ -24,12 +24,19 @@ public class GarlicKnots implements IPriceable {
 
     @Override
     public String toString() {
+        final String BOLD = "\u001B[1m";
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String CYAN = "\u001B[36m";
+        final String YELLOW = "\u001B[33m";
+
         StringBuilder builder = new StringBuilder();
 
-        builder.append("---- Garlic Knots ----\n");
-        builder.append("flavor  : " + flavor + "\n");
-        builder.append("---- Garlic Knots Price ----\n");
-        builder.append("price: $" + String.format("%.2f", getPrice()) + "\n");
+        builder.append(CYAN + BOLD + "\n=============== Garlic Knots " + flavor + " ===============\n");
+        builder.append(YELLOW + " Flavor      :" + GREEN + flavor + "\n");
+        builder.append(CYAN + BOLD + "\n=============== Price ===============\n" + RESET);
+        builder.append(RED + "price: $" + String.format("%.2f", getPrice()) + RESET);
 
         return builder.toString();
     }

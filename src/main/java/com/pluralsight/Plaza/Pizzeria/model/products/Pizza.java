@@ -12,7 +12,7 @@ public class Pizza implements IPriceable {
     private boolean stuffed;
     private String crustType;
 
-    public Pizza(List<Topping> toppings, int size, boolean stuffed, String crustType,String name) {
+    public Pizza(List<Topping> toppings, int size, boolean stuffed, String crustType, String name) {
         this.name = name;
         this.toppings = toppings;
         this.size = size;
@@ -92,23 +92,33 @@ public class Pizza implements IPriceable {
 
     @Override
     public String toString() {
+        final String BOLD = "\u001B[1m";
+        final String RESET = "\u001B[0m";
+        final String RED = "\u001B[31m";
+        final String GREEN = "\u001B[32m";
+        final String CYAN = "\u001B[36m";
+        final String YELLOW = "\u001B[33m";
+
         StringBuilder builder = new StringBuilder();
-        builder.append("---- " + name + " Pizza ----\n");
-        builder.append(String.format("size      : %d\n", size));
-        builder.append(String.format("crust type: %s\n", crustType));
-        builder.append(String.format("stuffed   : %s\n", stuffed ? "Yes" : "No"));
-        builder.append("toppings   :\n");
+
+
+        builder.append(CYAN + BOLD + "\n=============== " + name + " Pizza ===============\n");
+        builder.append(String.format(YELLOW + " size      :" + GREEN + " %d inch\n", size));
+        builder.append(String.format(YELLOW + " crust type: " + GREEN + "%s\n", crustType));
+        builder.append(String.format(YELLOW + " stuffed   : %s\n", stuffed ? GREEN + "Yes" : RED + "No"));
+
+        builder.append(YELLOW + " toppings  :\n" + RESET);
 
         if (toppings.isEmpty()) {
-            builder.append(" - none\n");
+            builder.append(RED + "            - none\n");
         } else {
             for (Topping topping : toppings) {
-                builder.append(" - ").append(topping).append("\n");
+                builder.append("            - " + GREEN).append(topping).append("\n" + RESET);
             }
         }
 
-        builder.append("---- Pizza Price ----\n");
-        builder.append("price: $" + String.format("%.2f", getPrice()) + "\n");
+        builder.append(CYAN + BOLD + "\n=============== Price ===============\n" + RESET);
+        builder.append(RED + "price: $" + String.format("%.2f", getPrice()) + RESET);
 
         return builder.toString();
     }
