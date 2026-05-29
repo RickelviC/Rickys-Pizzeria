@@ -29,6 +29,11 @@ public class UserInterface {
     private String name = "custom";
     private List<Topping> allTops = new ArrayList<>();
 
+
+
+    /*
+     * called in the main to make a new Order to do most of the match
+     */
     public UserInterface() {
         //UUID is a 36-character string made up of 5 groups of hexadecimal digits separated by hyphens
         //example 123e4567-e89b-12d3-a456-426614174000
@@ -37,6 +42,9 @@ public class UserInterface {
         order = new Order(Id);
     }
 
+    /*
+    * main menu display options that will call methods for each options
+    */
     public void display() {
 
         boolean quit = false;
@@ -78,6 +86,9 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by the display() method to display the options for each method needed to make a pizza
+     */
     public void pizzaMenu() {
         boolean quit = false;
         while (!quit) {
@@ -124,6 +135,9 @@ public class UserInterface {
         }
     }
 
+    /*
+     * signature menu display options that calls a method to pre-make a pizza with set toppings
+     */
     public void signatureMenu() {
         boolean quit = false;
         while (!quit) {
@@ -156,6 +170,9 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by signatureMenu() method to pre-make the Margherita pizza
+     */
     public void makeMargherita() {
 
         Topping cheese = new Cheese("Mozzarella", false);
@@ -182,6 +199,9 @@ public class UserInterface {
 
     }
 
+    /*
+     * called by signatureMenu() method to pre-make the veggie pizza
+     */
     public void makeVeggie() {
 
         Topping cheese = new Cheese("Mozzarella", false);
@@ -210,6 +230,10 @@ public class UserInterface {
         System.out.println(GREEN + "✔ Added Veggie Pizza To Order" + RESET);
     }
 
+    /*
+     * called by PizzaMenu() to display all the toppings needed to
+     * make a pizza
+     */
     public void pizzaToppingMenu() {
         boolean quit = false;
         while (!quit) {
@@ -250,6 +274,10 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by PizzaMenu() to set the options of stuffing for
+     * the pizza (yes or no)
+     */
     public boolean chooseStuffed() {
         System.out.println(CYAN + BOLD + "====== Stuffed Crust ======" + RESET);
         System.out.println(YELLOW + "1) " + RESET + CYAN + "Yes");
@@ -277,6 +305,10 @@ public class UserInterface {
         return stuffed;
     }
 
+    /*
+     * called by PizzaMenu() to set the option of which crust the user
+     * wants for the pizza and saved to a variable to be used later.
+     */
     public String crustType() {
         System.out.println(CYAN + BOLD + "====== Crust type ======" + RESET);
         System.out.println(YELLOW + "1) " + RESET + CYAN + "Thin");
@@ -314,6 +346,11 @@ public class UserInterface {
         return crust;
     }
 
+    /*
+     * called by PizzaMenu() to set the option of what the size of the
+     * pizza is, also uses the pizza class to set the price for the
+     * option chosen and saved to a variable to be used later
+     */
     public int pizzaSize() {
         System.out.println(CYAN + BOLD + "========== Size ==========" + RESET);
         System.out.println(YELLOW + "1) " + RESET + CYAN + "8 inch Small $8.50");
@@ -345,6 +382,11 @@ public class UserInterface {
         return size;
     }
 
+    /*
+     * called by pizzaToppingMenu() to set the meat options and add them
+     * to a list called allTops, also calls a helper isExtra(String option)
+     * method to ask the user of they want extra of the chosen meat
+     */
     public void meatTopping() {
 
         boolean quit = false;
@@ -418,6 +460,11 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by pizzaToppingMenu() to set the cheese options and add
+     * them to a list called allTops, also calls a helper isExtra(String option)
+     * method to ask the user of they want extra of the chosen cheese
+     */
     public void cheeseTopping() {
         boolean quit = false;
         Cheese topping;
@@ -482,6 +529,10 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by pizzaToppingMenu() to set the options of regular toppings
+     * and add them to a list called allTops
+     */
     public void regularTopping() {
 
         boolean quit = false;
@@ -569,6 +620,10 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by pizzaToppingMenu() to set the options of sauce toppings
+     * and add them to a list called allTops
+     */
     public void sauceTopping() {
 
         boolean quit = false;
@@ -635,6 +690,10 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by pizzaToppingMenu() to set the options of sides
+     * toppings and add them to a list called allTops
+     */
     public void sideTopping() {
 
         boolean quit = false;
@@ -673,6 +732,10 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by PizzaMenu() to add all the saved variables
+     * in to a new pizza and added it to the order
+     */
     public void finishPizza() {
 
         if (size != 0) {
@@ -683,6 +746,9 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by PizzaMenu() to make a new drink and adding it to the order
+     */
     public void makeDrink() {
 
         System.out.print(YELLOW + "→ Enter The Flavor Of Your Drink: " + RESET);
@@ -729,6 +795,9 @@ public class UserInterface {
         order.addItem(drink);
     }
 
+    /*
+     * called by PizzaMenu() to make a new garlic knot and adding it to the order
+     */
     public void makeGarlicKnot() {
         System.out.print(YELLOW + "→ Enter The Flavor Of Your Garlic Knots: " + RESET);
         String flavor = scanner.nextLine();
@@ -739,6 +808,10 @@ public class UserInterface {
         System.out.println(GREEN + "✔ " + flavor + " Garlic Knots Added" + RESET);
     }
 
+    /*
+     * called by displayOrder() after the user confirms they want to
+     * check out to clear the order list and make the user pay the bill
+     */
     public void checkOut() {
         FileManager fileManager = new FileManager();
         fileManager.saveOrder(order);
@@ -746,6 +819,9 @@ public class UserInterface {
         cancelOrder();
     }
 
+    /*
+     * called by PizzaMenu() to display all items in order and asked user to check out
+     */
     public void displayOrder() {
 
         boolean pass = false;
@@ -793,6 +869,9 @@ public class UserInterface {
         }
     }
 
+    /*
+     * called by PizzaMenu() to remove all the items in order and restart from the start
+     */
     public void cancelOrder() {
 
         if (!order.getItems().isEmpty()) {
@@ -805,6 +884,11 @@ public class UserInterface {
 
     }
 
+    /*
+     * used by cheeseTopping() and meatTopping() method
+     * to ask the users if they want extra of the chosen
+     * option if they say yes adds it to alltops and increases the cost of the pizza
+     */
     public boolean isExtra(String option) {
         boolean isExtra = false;
         System.out.println(CYAN + BOLD + "do you want extra " + option + "?(Yes/No): " + RESET);
